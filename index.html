@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Home - PCDireitos</title>
+</head>
+
+<body>
+
+    <!--Cabeçalho-->
+    <header>
+        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <h1>PCDireitos</h1>
+        <p class="marca-descricao">Pessoas com direitos</p>
+
+        <!--Navegação do cabeçalho-->
+        <nav class="navegacao-principal" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impactos</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li>
+                    <details>
+                        <summary>Saiba mais</summary>
+                        <ul>
+                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="midia.html">Mídia</a></li>
+                            <li><a href="noticia.html">Notícias</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="orcamento_hospedagem.html">Orçamento e Hospedagem</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+
+    <!--corpo do site-->
+    <main>
+        <section class="destaque">
+            <p class="destaque-chamada">Informação que transforma</p>
+            <h1>Toda pessoa cabe no futuro</h1>
+
+            <p>Conhecimento, respeito e ação para construir uma sociedade onde 
+                pessoas com deficiência tenham voz, autonomia e oportunidades reais.</p>
+        </section>
+
+        <!--estatisticas-->
+        <section class="estatisticas" aria-label="Dados sobre pessoas com deficiência">
+            <article class="estatistica">
+                <strong>14,4</strong>
+                <p>Milhões de brasileiros são PCDs segundo o Censo 2022</p>
+            </article>
+            <article class="estatistica">
+                <strong>7,3%</strong>
+                <p>brasileiros têm algum tipo de deficiência segundo o Censo 2022</p>
+            </article>
+            <article class="estatistica">
+                <strong>100%</strong>
+                <p>Das pessoas merecem respeito, dignidade e acesso a oportunidades</p>
+            </article>
+        </section>
+
+        <section class="conceito">
+            <h2>Deficiência não define ninguém</h2>
+
+            <p>Pessoa com deficiência (PCD) é aquela que possui impedimentos de longo prazo que, em interação com barreiras, podem limitar 
+                sua participação plena na sociedade. O foco deve estar na remoção dessas barreiras — não na pessoa.</p>
+        </section>
+
+        <section class="principios" aria-label="Princípios de inclusão">
+            <article class="principio">
+                <h3>Respeite a autonomia</h3>
+                <p>Autonomia é a capacidade de tomar decisões e agir de acordo com a própria vontade. 
+                Pergunte antes de ajudar. Cada pessoa sabe melhor do que ninguém o que precisa e como 
+                prefere ser apoiada..</p>
+            </article>
+
+            <article class="principio">
+                <h3>Remova barreiras</h3>
+                <p>Barreiras são obstáculos que dificultam ou impedem a participação plena das pessoas 
+                    com deficiência na sociedade. Acessibilidade também é comunicação clara, 
+                    atitudes sem preconceito e ambientes pensados para todos.</p>
+            </article>
+
+            <article class="principio">
+                <h3>Inclua a verdade</h3>
+                <p>Convide pessoas com deficiência para decisões, projetos e conversas desde o início — não apenas no final.</p>
+            </article>
+        </section>
+    </main>
+
+    <!--Painel acessibilidade-->
+    <div id="acesso">
+        <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
+          aria-label="Abrir painel de acessibilidade"> A+
+        </button>
+
+        <section id="painel" role="dialog" aria-labelledby="titulo" hidden>
+            <h2 id="titulo">Acessibilidade</h2>
+
+            <!--Botões de acessibilidade-->
+            <div role="group" aria-label="Tamanho do texto">
+                <span>Tamanho do texto</span>
+                <button type="button" data-acao="fonte-menos" aria-label="Diminuir texto">A−</button>
+                <button type="button" data-acao="fonte-mais" aria-label="Aumentar texto">A+</button>
+
+                <!--Botões de acessibilidade visual-->
+                <button type="button" data-toggle="alto-contraste" aria-pressed="false">Alto contraste</button>
+                <button type="button" data-toggle="escala-cinza" aria-pressed="false">Tons de cinza</button>
+                <button type="button" data-toggle="fonte-legivel" aria-pressed="false">Fonte legível</button>
+                <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
+                <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
+                <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
+                </div>
+
+            <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
+         </section>
+
+         <!--Filtros para modo daltônico-->
+         <svg aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="filtro-protanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.567 0.433 0     0 0
+                        0.558 0.442 0     0 0
+                        0     0.242 0.758 0 0
+                        0     0     0     1 0"/>
+                </filter>
+                <filter id="filtro-deuteranopia">
+                    <feColorMatrix type="matrix" values="
+                        0.625 0.375 0   0 0
+                        0.7   0.3   0   0 0
+                        0     0.3   0.7 0 0
+                        0     0     0   1 0"/>
+                </filter>
+                <filter id="filtro-tritanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.95 0.05  0     0 0
+                        0    0.433 0.567 0 0
+                        0    0.475 0.525 0 0
+                        0    0     0     1 0"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <!--rodapé-->
+    <footer>
+        <section>
+            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
+        </section>
+
+        <!--navegação no rodapé-->
+        <section>
+            <h3>Navegue</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impacto</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <script src="js/painel.js"></script>
+</body>
+
+</html>

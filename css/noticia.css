@@ -1,0 +1,639 @@
+:root {
+    /* CORESS */
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #031926;
+    background: #f4e9cd;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    --cor-principal: #031926; /*títulos, cabeçalho e rodapé */
+    --cor-destaque: #468189; /* botões e detalhes */
+    --cor-verde-agua: #77aca4; /* foco do teclado*/
+    --cor-verde-claro: #9ebebd; /* textos e fundos mais leves/suaves */
+    --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
+    --cor-fundo-cartao: #fffdf7; /* artões e painel */
+    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+}
+
+/* bordas e preenchimentos no cálculo da largura */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px; 
+    margin: 0;
+}
+
+a {
+    color: var(--cor-principal);
+    text-underline-offset: 3.2px; /* separa o sublinhado */
+}
+
+/*  deixa de outra cor quando o mouse tá em cima */
+a:hover {
+    color: var(--cor-destaque);
+}
+
+/*  destaca elemento com foco */
+:focus-visible {
+    outline: 3px solid var(--cor-verde-agua);
+    outline-offset: 4px;
+}
+
+header {
+    /* max ele escolhe o maior valor, mantém espaço nas laterais e centraliza
+       o conteúdo em telas mais largas */
+    padding: 20px clamp(20px, 3vw, 48px); 
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    align-items: center;
+}
+
+header > img[src="imgs/logo_PCDireitos.jpg"] {
+    grid-row: span 3;   /* logo ocupa as 3 linhas */
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+}
+
+header h1 {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: clamp(28px, 4vw, 36px); /* Tamanho q adapta */
+    line-height: 1.2;
+}
+
+.marca-descricao {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal {
+    flex-basis: 100%;
+}
+
+.navegacao-principal ul {
+    /*flex-wrap vai quebrar em outra linha quando não houver espaço*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacao-principal a,
+.navegacao-principal summary {
+    /* A vírgula deixa junto*/
+    display: inline-block;
+    padding: 7.2px 1.6px;
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration-thickness: 1.92px;
+    cursor: pointer;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal a[href="noticia.html"] {
+    color: var(--cor-verde-claro);
+    text-decoration: underline;
+    text-underline-offset: 4.8px;
+}
+
+.navegacao-principal details ul {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 2.4px;
+    min-width: 208px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--cor-principal);
+    box-shadow: var(--sombra-cartao);
+}
+
+.navegacao-principal details {
+    position: relative;
+}
+
+main {
+    padding: 0 20px 48px;
+}
+
+main > section {
+    width: min(100%, 1152px);
+    margin-inline: auto;
+    padding-block: 32px;
+}
+
+main > section:first-of-type {
+    padding-block: clamp(56px, 9vw, 96px);
+    text-align: center;
+}
+
+main > section:first-of-type > p:first-child {
+    margin: 0 0 8px;
+    color: var(--cor-destaque);
+    font-size: 13.6px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+main > section:first-of-type h1 {
+    max-width: 768px;
+    margin: 0 auto 12px;
+    font-size: clamp(32px, 5vw, 56px);
+    line-height: 1.15;
+}
+
+main > section:first-of-type > p:last-child {
+    max-width: 672px;
+    margin: 0 auto;
+}
+
+main > section:nth-of-type(2) article {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 0 24px;
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+}
+
+main > section:nth-of-type(2) article img {
+    grid-row: span 5;
+    width: 100%;
+    height: 288px;
+    border-radius: 10.4px;
+    object-fit: cover;
+}
+
+main > section:nth-of-type(2) article p {
+    margin: 6.4px 0;
+}
+
+main > section:nth-of-type(2) article p:first-of-type {
+    color: #40545a;
+    font-size: 13.6px;
+}
+
+main > section:nth-of-type(2) article p:nth-of-type(2),
+main > section:nth-of-type(3) article strong {
+    color: var(--cor-destaque);
+    font-size: 13.6px;
+    font-weight: 700;
+    letter-spacing: 0.64px;
+    text-transform: uppercase;
+}
+
+main > section:nth-of-type(2) h2 {
+    margin: 4px 0;
+    font-size: clamp(21.6px, 3vw, 32px);
+    line-height: 1.25;
+}
+
+main > section:nth-of-type(2) article p:last-child a,
+main > section:nth-of-type(3) article p:last-child a,
+main > section:nth-of-type(4) > p:last-child a {
+    color: var(--cor-destaque);
+    font-weight: 700;
+}
+
+main > section:nth-of-type(3) > p:first-child,
+main > section:nth-of-type(4) > p:first-child,
+main > section:nth-of-type(5) > p:first-child {
+    margin: 0 0 12px;
+    color: var(--cor-destaque);
+    font-size: 13.6px;
+    font-weight: 700;
+    letter-spacing: 1.28px;
+    text-transform: uppercase;
+}
+
+main > section:nth-of-type(3) nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 20px;
+    padding: 0;
+    list-style: none;
+}
+
+main > section:nth-of-type(3) nav a {
+    display: inline-block;
+    padding: 6.4px 12px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 32px;
+    background: var(--cor-fundo-cartao);
+    text-decoration: none;
+}
+
+main > section:nth-of-type(3) nav a:hover {
+    background: var(--cor-verde-claro);
+}
+
+main > section:nth-of-type(3) #todos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+main > section:nth-of-type(3) article {
+    min-width: 0;
+    padding: 16px;
+    border-radius: 13.6px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+}
+
+main > section:nth-of-type(3) article img {
+    display: block;
+    width: calc(100% + 32px);
+    max-width: none;
+    height: 176px;
+    margin: -16px -16px 12px;
+    border-radius: 13.6px 13.6px 0 0;
+    object-fit: cover;
+}
+
+main > section:nth-of-type(3) article p {
+    margin: 9.6px 0;
+}
+
+main > section:nth-of-type(3) article p:first-of-type {
+    color: #40545a;
+    font-size: 12.8px;
+}
+
+main > section:nth-of-type(3) article h3 {
+    margin: 9.6px 0;
+    font-size: 18.4px;
+    line-height: 1.3;
+}
+
+main > section:nth-of-type(3) article p:last-child {
+    margin-bottom: 0;
+}
+
+main > section:nth-of-type(4) {
+    padding: 24px;
+    border-radius: 16px;
+    background: var(--cor-verde-claro);
+}
+
+main > section:nth-of-type(4) h2,
+main > section:nth-of-type(5) h2 {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3vw, 32px);
+    line-height: 1.25;
+}
+
+main > section:nth-of-type(4) > p:last-child {
+    margin-bottom: 0;
+}
+
+main > section:nth-of-type(5) blockquote {
+    margin: 16px 0;
+    padding: 16px;
+    border-left: 4px solid var(--cor-destaque);
+    background: var(--cor-fundo-cartao);
+}
+
+main > section:nth-of-type(5) blockquote p {
+    margin: 0;
+}
+
+main > section:nth-of-type(5) form {
+    padding: 20px;
+    border-radius: 13.6px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+}
+
+main > section:nth-of-type(5) fieldset {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main > section:nth-of-type(5) legend {
+    margin-bottom: 12px;
+    font-size: 19.2px;
+    font-weight: 700;
+}
+
+main > section:nth-of-type(5) fieldset > p {
+    margin: 0;
+}
+
+main > section:nth-of-type(5) label {
+    font-weight: 600;
+}
+
+main > section:nth-of-type(5) input:not([type="checkbox"]),
+main > section:nth-of-type(5) textarea {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 5.6px;
+    padding: 11.2px;
+    border: 1px solid #8a9b9b;
+    border-radius: 6.4px;
+    background: #fff;
+    color: var(--cor-principal);
+    font: inherit;
+}
+
+main > section:nth-of-type(5) textarea {
+    resize: vertical;
+}
+
+main > section:nth-of-type(5) button {
+    padding: 11.2px 16px;
+    border: 0;
+    border-radius: 6.4px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+main > section:nth-of-type(5) button:hover {
+    background: var(--cor-destaque);
+}
+
+footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+footer h3 {
+    color: var(--cor-creme);
+}
+
+footer a {
+    color: var(--cor-verde-claro);
+}
+
+footer a:hover {
+    color: var(--cor-creme);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+footer h3 {
+    color: var(--cor-creme);
+}
+
+footer a {
+    color: var(--cor-verde-claro);
+}
+
+footer a:hover {
+    color: var(--cor-creme);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+/*Parte da logo no rodapé*/
+footer img {
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    border-radius: 12px;
+}
+
+footer p {
+    max-width: 32ch;
+    margin: 0;
+}
+
+/*botão que ainda precisamos trabalhar :D*/
+#acesso {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+}
+
+#abrir {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--cor-creme);
+    border-radius: 50%;
+    background: var(--cor-destaque);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
+}
+
+#painel:not([hidden]) {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
+}
+
+#painel[hidden] {
+    display: none;
+}
+
+#painel h2 {
+    margin: 0 0 16px;
+}
+
+#painel [role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#painel [role="group"] span {
+    flex-basis: 100%;
+    font-weight: 700;
+}
+
+#painel button {
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    background: var(--cor-creme);
+    color: var(--cor-principal);
+    cursor: pointer;
+    font: inherit;
+}
+
+#painel button:hover {
+    background: var(--cor-verde-claro);
+}
+
+#painel .a11y-reset {
+    margin-top: 16px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+}
+
+/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
+#acesso svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
+html.alto-contraste body {
+    background: #000;
+    color: #fff;
+}
+html.alto-contraste header,
+html.alto-contraste footer,
+html.alto-contraste .conceito,
+html.alto-contraste .principio,
+html.alto-contraste .estatistica {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+html.alto-contraste a,
+html.alto-contraste .estatistica strong,
+html.alto-contraste .principio h3,
+html.alto-contraste .destaque-chamada {
+    color: #ffff00;
+}
+
+html.escala-cinza {
+    filter: grayscale(100%);
+}
+
+html.fonte-legivel body,
+html.fonte-legivel button {
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.destacar-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background: #ffff99;
+    color: #000;
+}
+
+html.espacamento body {
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+}
+
+/* ===== Modos para daltonismo ===== */
+html.dalt-protanopia   { 
+    filter: url(#filtro-protanopia); 
+}
+html.dalt-deuteranopia { 
+    filter: url(#filtro-deuteranopia); 
+}
+html.dalt-tritanopia   { 
+    filter: url(#filtro-tritanopia); 
+}
+
+@media (max-width: 900px) {
+    main > section:nth-of-type(3) #todos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .navegacao-principal ul {
+        justify-content: center;
+    }
+
+    main > section:nth-of-type(2) article {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(2) article img {
+        grid-row: auto;
+        height: 224px;
+        margin-bottom: 16px;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    main > section:nth-of-type(3) #todos {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(2) article,
+    main > section:nth-of-type(4),
+    main > section:nth-of-type(5) form {
+        padding: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

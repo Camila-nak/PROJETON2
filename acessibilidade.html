@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/acessibilidade.css">
+    <title>Acessibilidade - PCDireitos</title>
+</head>
+<body>
+
+        <!--Cabeçalho-->
+    <header>
+        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <h1>PCDireitos</h1>
+        <p class="marca-descricao">Pessoas com direitos</p>
+
+        <!--Navegação do cabeçalho-->
+        <nav class="navegacao-principal" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impactos</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li>
+                    <details>
+                        <summary>Saiba mais</summary>
+                        <ul>
+                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="midia.html">Mídia</a></li>
+                            <li><a href="noticia.html">Notícias</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="orcamento_hospedagem.html">Orçamento e Hospedagem</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        <section>
+            <p>Inclusão na prática</p>
+            <p>Medida que adotamos nesse site para garantir a acessibilidade</p>
+        </section>
+
+        <section>
+            <h2>O que fazemos nesse site?</h2>
+            <p>Para garantir a máxima acessibilidade, o botão "A+" foi posicionado em um local de destaque e fácil alcance: 
+                o canto inferior direito da janela do navegador. Essa localização é um padrão comum em muitas interfaces,
+                tornando-o intuitivo de encontrar para usuários que já estão acostumados com esse tipo de ferramenta de acessibilidade.</p>
+
+            <ul>
+                <li>Textos alternativos (<code>alt</code>) em todas as imagens.</li>
+                <li>Estrutura de títulos organizada, para leitores de tela.</li>
+                <li>Links com texto claro, sem "clique aqui".</li>
+                <li>Formulários com rótulos associados a cada campo.</li>
+                <li>Tabelas com legenda e cabeçalhos identificados.</li>
+                <li>Botão de acessibilidade para aumentar o texto e ativar alto contraste.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Medidas de inclusão por tipo de deficiência</h2>
+            <article>
+                <h3>Deficiência visual</h3>
+                <p>Descrição de imagens, bom contraste e compatibilidade com leitores de tela.</p>
+            </article>
+            <article>
+                <h3>Deficiência auditiva</h3>
+                <p>Legendas e transcrições.</p>
+            </article>
+            <article>
+                <h3>Deficiência física</h3>
+                <p>Navegação possível apenas pelo teclado e áreas de clique amplas.</p>
+            </article>
+            <article>
+                <h3>Deficiência intelectual</h3>
+                <p>Linguagem simples, frases curtas e organização previsível.</p>
+            </article>
+        </section>
+    </main>
+
+
+    <!--Painel acessibilidade-->
+    <div id="acesso">
+        <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
+          aria-label="Abrir painel de acessibilidade"> A+
+        </button>
+
+        <section id="painel" role="dialog" aria-labelledby="titulo" hidden>
+            <h2 id="titulo">Acessibilidade</h2>
+
+            <!--Botões de acessibilidade-->
+            <div role="group" aria-label="Tamanho do texto">
+                <span>Tamanho do texto</span>
+                <button type="button" data-acao="fonte-menos" aria-label="Diminuir texto">A−</button>
+                <button type="button" data-acao="fonte-mais" aria-label="Aumentar texto">A+</button>
+
+                <!--Botões de acessibilidade visual-->
+                <button type="button" data-toggle="alto-contraste" aria-pressed="false">Alto contraste</button>
+                <button type="button" data-toggle="escala-cinza" aria-pressed="false">Tons de cinza</button>
+                <button type="button" data-toggle="fonte-legivel" aria-pressed="false">Fonte legível</button>
+                <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
+                <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
+                <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
+                </div>
+
+            <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
+         </section>
+
+         <!--Filtros para modo daltônico-->
+         <svg aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="filtro-protanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.567 0.433 0     0 0
+                        0.558 0.442 0     0 0
+                        0     0.242 0.758 0 0
+                        0     0     0     1 0"/>
+                </filter>
+                <filter id="filtro-deuteranopia">
+                    <feColorMatrix type="matrix" values="
+                        0.625 0.375 0   0 0
+                        0.7   0.3   0   0 0
+                        0     0.3   0.7 0 0
+                        0     0     0   1 0"/>
+                </filter>
+                <filter id="filtro-tritanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.95 0.05  0     0 0
+                        0    0.433 0.567 0 0
+                        0    0.475 0.525 0 0
+                        0    0     0     1 0"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <!--rodapé-->
+    <footer>
+        <section>
+            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
+
+        </section>
+
+        <!--navegação no rodapé-->
+        <section>
+            <h3>Navegue</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impacto</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+            </ul>
+        </section>
+    </footer>
+    
+    <script src="js/painel.js"></script>
+</body>
+</html>

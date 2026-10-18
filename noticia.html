@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/noticia.css">
+    <title>Notícias - PCDireitos</title>
+</head>
+<body>
+    
+        <!--Cabeçalho
+    nome temporário-->
+    <header>
+        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <h1>PCDireitos</h1>
+        <p class="marca-descricao">Pessoas com direitos</p>
+
+        <!--Navegação do cabeçalho
+        a gente pode modificar também os bagulho-->
+        <nav class="navegacao-principal" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impactos</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+
+                <!--ele abre e mostra as outras opções, dar uma olhada-->
+                <li>
+                    <details>
+                        <summary>Saiba mais</summary>
+                        <ul>
+                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="midia.html">Mídia</a></li>
+                            <li><a href="noticia.html">Notícias</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="orcamento_hospedagem.html">Orçamento e Hospedagem</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+
+    <main>
+        <section>
+            <p>NOTÍCIAS, IDEIAS E VIVÊNCIAS</p>
+            <h1>Informação para mudar perspectivas.</h1>
+            <p>Conteúdo para entender direitos, ampliar vozes e transformar a inclusão em prática.</p>
+        </section>
+
+        <!--Notícia como capa para o site-->
+        <section>
+            <article>
+                <img src="imgs/inclusao.png" alt="Mãos de diferentes tons de pele unidas ao centro sobre um fundo preto."> <!--Imagem para a noticia-->
+                <p><small>Mãos de diferentes tons de pele unidas ao centro sobre um fundo preto, simbolizando união e diversidade.</small></p>
+                <p>POLÍTICAS PÚBLICAS</p>
+                <h2>Políticas públicas para a inclusão de pessoas com deficiência</h2>
+                <p>Segundo o site do CLP (Centro de Liderança Pública), o artigo aborda a importância da
+                    antidiscriminação ativamente praticada e destaca iniciativas públicas de sucesso para a 
+                    inclusão de pessoas com deficiência no setor público.</p>
+                <p><a href="https://clp.org.br/politicas-publicas-para-a-inclusao-de-pessoas-com-deficiencia/" target="_blank">Ler reportagem →</a></p>
+            </article>
+        </section>
+
+        <section>
+            <p>Para ler, refletir e compartilhar</p>
+
+            <!--Para o usuário achar o que quer-->
+            <!--sE ACHAR MUITO COMPLICADO PODE TIRAR(perdão, caps lock), ai só tem que tirar os IDs que iriam puxar para a notícia específica-->
+            <nav>
+                <ul>
+                    <li><a href="#todos">Todos</a></li>
+                    <li><a href="#direitos">Direitos</a></li>
+                    <li><a href="#educacao">Educação</a></li>
+                    <li><a href="#dificuldades">Comportamento</a></li>
+                    <li><a href="#esporte">Esporte</a></li>
+                    <li><a href="#saude">Saúde</a></li>
+                </ul>
+            </nav>
+
+            <div id="todos">
+                <article id="direitos">
+                    <img src="imgs/falar.jpg" alt="Pessoas em reunião de trabalho a conversarem em uma mesa branca."> <!--Imagem para a noticia-->
+                    <p><small>Pessoas em reunião de trabalho a conversarem em uma mesa branca.</small></p>
+                    <p><strong>Direitos</strong></p>
+                    <h3>Como falar sobre deficiência</h3>
+                    <p>Segundo o site da Secretaria da Pessoa com Deficiência (SEPD) do Governo do Distrito 
+                        Federal, a publicação apresenta um guia para orientação e conscientização sobre o uso de 
+                        terminologias corretas e adequadas ao falar sobre pessoas com deficiência (PcD).</p>
+                    <p><a href="https://www.sepd.df.gov.br/saiba-mais" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="direitos">
+                    <img src="imgs/direitos.jpg" alt="Uma mulher sorridente em traje formal segura um documento."> <!--Imagem para a noticia-->
+                    <p><small>Uma mulher sorridente em traje formal segura um documento.</small></p>
+                    <p><strong>Direitos</strong></p>
+                    <h3>Direitos das pessoas com deficiência: tudo o que você precisa saber</h3>
+                    <p>Segundo o site do TST (Tribunal Superior do Trabalho), o artigo detalha os principais direitos das pessoas 
+                        com deficiência (PcD), abordando prioridade processual, cotas de emprego, reserva de vagas no setor público, 
+                        proibições contra discriminação e regras específicas para aposentadoria e previdência.</p>
+                    <p><a href="https://www.tst.jus.br/direitos-das-pessoas-com-deficiencia" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="educacao">
+                    <img src="imgs/lapis.jpg" alt="Vários lápis de cor organizados em círculo num fundo branco."> <!--Imagem para a noticia-->
+                    <p><small>Vários lápis de cor organizados em círculo num fundo branco.</small></p>
+                    <p><strong>Educação</strong></p>
+                    <h3>Pessoas com deficiência e o acesso à educação</h3>
+                    <p>Segundo o site do Instituto Federal da Paraíba (IFPB), a publicação "Fique por Dentro" analisa a evolução 
+                        histórica das concepções sobre as pessoas com deficiência e discute a transição do modelo médico-patológico 
+                        para a perspectiva inclusiva, apontando os desafios atuais e a necessidade de combater o preconceito na educação.</p>
+                    <p><a href="https://www.ifpb.edu.br/assuntos/fique-por-dentro/pessoas-com-deficiencia-e-o-acesso-a-educacao" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="educacao">
+                    <img src="imgs/meninalendo.jpg" alt="Uma jovem de perfil concentrada a ler um livro aberto ao ar livre."> <!--Imagem para a noticia-->
+                    <p><small>Uma jovem de perfil concentrada a ler um livro aberto ao ar livre.</small></p>
+                    <p><strong>Educação</strong></p>
+                    <h3>Apenas uma em cada quatro pessoas com deficiência conclui ensino básico obrigatório no Brasil</h3>
+                    <p>Segundo o site da CNTE (Confederação Nacional dos Trabalhadores em Educação), dados da Pnad Contínua mostram que 
+                        apenas uma em cada quatro pessoas com deficiência conclui a educação básica no Brasil, apontando a falta de 
+                        acessibilidade estrutural e de formação docente como principais fatores de evasão escolar.</p>
+                    <p><a href="https://cnte.org.br/noticias/apenas-uma-em-cada-quatro-pessoas-com-deficiencia-conclui-ensino-basico-obrigatorio-no-brasil-7460" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="dificuldades">
+                    <img src="imgs/dificuldade.jpg" alt="Dois manequins articulados de madeira a tentar montar um quebra-cabeças em conjunto."> <!--Imagem para a noticia-->
+                    <p><small>Dois manequins articulados de madeira a tentar montar um quebra-cabeças em conjunto.</small></p>
+                    <p><strong>Dificuldades</strong></p>
+                    <h3>As barreiras mais comuns no dia a dia da pessoa com deficiência</h3>
+                    <p>Segundo o site da APAE ES (Federação das Apaes do Estado do Espírito Santo), a matéria destaca as barreiras 
+                        cotidianas enfrentadas pelas pessoas com deficiência — como falhas de acessibilidade e preconceito — por ocasião 
+                        do Dia Nacional de Luta da Pessoa com Deficiência.</p>
+                    <p><a href="https://apaees.org.br/noticias/detalhe/as-barreiras-mais-comuns-no-dia-a-dia-da-pessoa-com-deficiencia" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="dificuldades">
+                    <img src="imgs/faltainclusao.jpg" alt="Silhuetas de figuras humanas de dadas dadas, incluindo uma pessoa em cadeira de rodas, ao pôr do sol."> <!--Imagem para a noticia-->
+                    <p><small>Silhuetas de figuras humanas de dadas dadas, incluindo uma pessoa em cadeira de rodas, ao pôr do sol.</small></p>
+                    <p><strong>Dificuldades</strong></p>
+                    <h3>Desafios enfrentados por pessoas com deficiência no mercado de trabalho</h3>
+                    <p>Segundo a Agência IBGE Notícias, os dados da Pnad Contínua mostram que pessoas com deficiência no Brasil enfrentam
+                        significativos obstáculos de acesso à educação, menor taxa de participação no mercado de trabalho e rendimentos 
+                        médios inferiores às pessoas sem deficiência.</p>
+                    <p><a href="https://agenciadenoticias.ibge.gov.br/agencia-noticias/2012-agencia-de-noticias/noticias/37317-pessoas-com-deficiencia-tem-menor-acesso-a-educacao-ao-trabalho-e-a-renda" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="esporte">
+                    <img src="imgs/esporte.jpg" alt="Atleta paralímpica em cadeira de rodas a jogar parágminton com raquete e volante em estúdio."> <!--Imagem para a noticia-->
+                    <p><small>Atleta paralímpica em cadeira de rodas a jogar parágminton com raquete e volante em estúdio.</small></p>
+                    <p><strong>Esporte</strong></p>
+                    <h3>Quais são os esportes mais praticados por pessoas com deficiência intelectual?</h3>
+                    <p>Segundo o site do CPB (Comitê Paralímpico Brasileiro), a publicação aborda a presença da deficiência intelectual 
+                        nos Jogos Paralímpicos, detalhando as três modalidades elegíveis (atletismo, natação e tênis de mesa), o histórico 
+                        de participação e o desempenho dos atletas brasileiros na categoria.</p>
+                    <p><a href="https://cpb.org.br/noticias/quais-sao-os-esportes-mais-praticados-por-pessoas-com-deficiencia-intelectual/" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <article id="saude">
+                    <img src="imgs/saude.jpg" alt="Estetoscópio e aparelho de medição da pressão arterial sobre um fundo branco."> <!--Imagem para a noticia-->
+                    <p><small>Estetoscópio e aparelho de medição da pressão arterial sobre um fundo branco.</small></p>
+                    <p><strong>Saúde</strong></p>
+                    <h3>Política Nacional de Atenção Integral à Saúde da Pessoa com Deficiência – PNAISPD</h3>
+                    <p>Segundo o site EFS (Estudo em Foco Saúde), o texto resume a Portaria GM/MS nº 1.526/2023, que institui a 
+                        Política Nacional de Atenção Integral à Saúde da Pessoa com Deficiência (PNAISPD) no âmbito do SUS, e detalha seus 
+                        principais conceitos e diretrizes de acessibilidade e cuidado integral.</p>
+                    <p><a href="https://estudoemfocosaude.com.br/politica-nacional-de-atencao-integral-a-saude-da-pessoa-com-deficiencia-pnaispd/" target="_blank">Ler reportagem →</a></p>
+                </article>
+
+                <!--Caso queira colocar mais notícias-->
+                <!--
+                <article id="">
+                    <img src="#" alt=""> Imagem para a noticia
+                    <p><strong></strong></p>
+                    <h3></h3>
+                    <p></p>
+                    <p><a href="" target="_blank">Ler reportagem →</a></p>
+                </article>
+                --> 
+            </div>
+        </section>
+
+        <!--se achar desnecessário você pode apagar-->
+        <section>
+            <p>Por que um blog?</p>
+            <p>Um blog é uma plataforma ideal para compartilhar informações, experiências e perspectivas sobre temas relevantes para a comunidade.</p>
+            <h2>Toda história amplia nosso olhar.</h2>
+            <p>Este é um espaço para aprender com especialistas, acompanhar conquistas e, principalmente, ouvir quem vive a inclusão todos os 
+                dias. A experiência de cada pessoa ajuda a construir um retrato mais verdadeiro e plural da sociedade.</p>
+
+            <p><a href="#relato">Compartilhe sua experiência e ajude a criar um ambiente mais inclusivo para todos.</a></p>
+        </section>
+
+        <!--se nessa parte do formulário vc conseguir deixar esse texto de um lado e o formulário no outro, como duas colunas-->
+        <section id="relato">
+            <p>Sua voz importa</p>
+            <h2>Conte uma experiência que merece ser ouvida</h2>
+            <p>Pode ser uma conquista, um desafio, uma ideia ou uma atitude que fez diferença. Relatos selecionados poderão inspirar
+                novas publicações no blog.</p>
+
+            <blockquote>
+                <p> pode escolher como quer ser identificado(a) ao compartilhar sua experiência. Seu relato só será publicado com
+                sua autorização expressa. Ao enviar, você concorda com a publicação do conteúdo e com a divulgação do seu nome ou pseudônimo, 
+                conforme sua escolha. Caso queira manter o anonimato, não se preocupe, respeitaremos sua decisão.</p>Você
+            </blockquote>
+
+            <!--Ele fica em um quadrado para fazer uma separação mais organizada-->
+            <form method="post">
+                <fieldset>
+                    <legend>Escreva seu relato</legend>
+                    <p>Todos os campos marcados são obrigatórios.</p>
+
+                    <p>
+                        <label for="nome">Como podemos chamar você? *</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Seu nome ou apelido" required>
+                    </p>
+
+                    <p>
+                        <label for="email">E-mail para contato *</label><br>
+                        <input type="email" id="email" name="email" placeholder="voce@email.com" required>
+                    </p>
+
+                    <p>
+                        <label for="titulo">Título da sua experiência *</label><br>
+                        <input type="text" id="titulo" name="titulo" placeholder="Dê um título para sua história" size="50" required>
+                    </p>
+
+                    <p>
+                        <label for="experiencia">Sua experiência *</label><br>
+                        <textarea id="experiencia" name="experiencia" rows="8" cols="60"
+                        placeholder="Conte com suas palavras. Este é um espaço de escuta e respeito." required></textarea>
+                    </p>
+
+                    <p>
+                        <input type="checkbox" id="aceite" name="aceite" required>
+                        <label for="aceite">Concordo que a equipe do Inclui entre em contato para conversar sobre uma possível publicação. *</label>
+                    </p>
+
+                    <p><button type="submit">Enviar experiência</button></p>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+
+    <!--Painel acessibilidade-->
+    <div id="acesso">
+        <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
+          aria-label="Abrir painel de acessibilidade"> A+
+        </button>
+
+        <section id="painel" role="dialog" aria-labelledby="titulo" hidden>
+            <h2 id="titulo">Acessibilidade</h2>
+
+            <!--Botões de acessibilidade-->
+            <div role="group" aria-label="Tamanho do texto">
+                <span>Tamanho do texto</span>
+                <button type="button" data-acao="fonte-menos" aria-label="Diminuir texto">A−</button>
+                <button type="button" data-acao="fonte-mais" aria-label="Aumentar texto">A+</button>
+
+                <!--Botões de acessibilidade visual-->
+                <button type="button" data-toggle="alto-contraste" aria-pressed="false">Alto contraste</button>
+                <button type="button" data-toggle="escala-cinza" aria-pressed="false">Tons de cinza</button>
+                <button type="button" data-toggle="fonte-legivel" aria-pressed="false">Fonte legível</button>
+                <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
+                <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
+                <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
+                </div>
+
+            <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
+         </section>
+
+         <!--Filtros para modo daltônico-->
+         <svg aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="filtro-protanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.567 0.433 0     0 0
+                        0.558 0.442 0     0 0
+                        0     0.242 0.758 0 0
+                        0     0     0     1 0"/>
+                </filter>
+                <filter id="filtro-deuteranopia">
+                    <feColorMatrix type="matrix" values="
+                        0.625 0.375 0   0 0
+                        0.7   0.3   0   0 0
+                        0     0.3   0.7 0 0
+                        0     0     0   1 0"/>
+                </filter>
+                <filter id="filtro-tritanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.95 0.05  0     0 0
+                        0    0.433 0.567 0 0
+                        0    0.475 0.525 0 0
+                        0    0     0     1 0"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <!--rodapé-->
+    <footer>
+        <section>
+            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
+        </section>
+
+        <section>
+            <h3>Navegue</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impacto</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+            </ul>
+        </section>
+    </footer>
+
+    <script src="js/painel.js"></script>
+</body>
+</html>

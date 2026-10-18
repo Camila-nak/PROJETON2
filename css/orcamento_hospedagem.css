@@ -1,0 +1,583 @@
+:root {
+    /*cores */
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #031926;
+    background: #f4e9cd;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    --cor-principal: #031926; /*títulos, cabeçalho e rodapé */
+    --cor-destaque: #468189; /* botões e detalhes */
+    --cor-verde-agua: #77aca4; /* foco do teclado*/
+    --cor-verde-claro: #9ebebd; /* textos e fundos mais leves/suaves */
+    --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
+    --cor-fundo-cartao: #fffdf7; /* artões e painel */
+    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+}
+
+/* bordas e preenchimentos no cálculo da largura */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+}
+
+a {
+    color: var(--cor-principal);
+    text-underline-offset: 3.2px; /* separa o sublinhado das letras */
+}
+
+/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
+a:hover {
+    color: var(--cor-destaque);
+}
+
+/*  destaca o elemento que recebeu foco, como na navegação pelo tab */
+:focus-visible {
+    outline: 3px solid var(--cor-verde-agua);
+    outline-offset: 4px;
+}
+
+header {
+    /*Espaço interno do cabeçalho: 20px em cima e embaixo, e nas laterais um valor que 
+    acompanha a tela (3% da largura), nunca menor que 20px nem maior que 48px.*/
+    padding: 20px clamp(20px, 3vw, 48px); 
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    align-items: center;
+}
+
+header > img[src="imgs/logo_PCDireitos.jpg"] {
+    grid-row: span 3;   /* logo ocupa as 3 linhas */
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+}
+
+header h1 {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: clamp(28px, 4vw, 36px); /* Tamanho q adapta */
+    line-height: 1.2;
+}
+
+.marca-descricao {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal {
+    flex-basis: 100%;
+}
+
+.navegacao-principal ul {
+    /*flex-wrap vai quebrar em outra linha quando não houver espaço*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacao-principal a,
+.navegacao-principal summary {
+    /* A vírgula combina  */
+    display: inline-block;
+    padding: 7.2px 1.6px;
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration-thickness: 1.92px;
+    cursor: pointer;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal a[href="orcamento_hospedagem.html"] {
+    color: var(--cor-verde-claro);
+    text-decoration: underline;
+    text-underline-offset: 4.8px;
+}
+
+.navegacao-principal details ul {
+    
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 2.4px;
+    min-width: 208px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--cor-principal);
+    box-shadow: var(--sombra-cartao);
+}
+
+main {
+    padding: 0 20px 48px;
+}
+
+main > section:first-of-type,
+main > fieldset,
+main > section:last-of-type {
+    width: min(100%, 1152px);
+    margin-inline: auto;
+}
+
+main > section:first-of-type {
+    padding-block: clamp(56px, 9vw, 104px);
+    text-align: center;
+}
+
+main > section:first-of-type > p:first-child {
+    margin: 0 0 10px;
+    color: var(--cor-destaque);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main > section:first-of-type h1 {
+    margin: 0 0 12px;
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.1;
+}
+
+main > section:first-of-type > p:last-child {
+    max-width: 740px;
+    margin: 0 auto;
+    font-size: clamp(16px, 2vw, 19px);
+}
+
+main > br {
+    display: none;
+}
+
+main > fieldset {
+    min-width: 0;
+    margin: 0 auto 28px;
+    padding: clamp(16px, 3vw, 32px);
+    border: 0;
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+}
+
+main > fieldset section h2,
+main > section:last-of-type h2 {
+    margin: 0 0 20px;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.25;
+    text-align: center;
+}
+
+main > fieldset section > div,
+main > section:last-of-type > table {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    border-radius: 10px;
+    scrollbar-color: var(--cor-destaque) var(--cor-creme);
+}
+
+table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+caption {
+    padding: 0 0 14px;
+    color: var(--cor-principal);
+    font-weight: 700;
+    text-align: center;
+}
+
+th,
+td {
+    padding: 13px 16px;
+    border-bottom: 1px solid rgb(3 25 38 / 12%);
+    vertical-align: top;
+}
+
+thead th {
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    line-height: 1.35;
+}
+
+tbody th {
+    min-width: 180px;
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background: rgb(244 233 205 / 45%);
+}
+
+tbody tr:hover {
+    background: rgb(119 172 164 / 20%);
+}
+
+tfoot td {
+    border-bottom: 0;
+    background: rgb(70 129 137 / 14%);
+    font-size: 14px;
+}
+
+main > fieldset section > p {
+    margin: 18px 0 0;
+}
+
+main > fieldset section > p a {
+    display: inline-block;
+    padding: 9px 16px;
+    border-radius: 5px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration: none;
+    display: grid;
+    place-items: center;
+    max-width: 240px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+main > fieldset section > p a:hover {
+    background: var(--cor-destaque);
+    color: var(--cor-fundo-cartao);
+}
+
+main > section:last-of-type {
+    margin-top: 48px;
+    padding: clamp(20px, 4vw, 40px);
+    border-radius: 16px;
+    background: rgb(158 190 189 / 35%);
+}
+
+main > section:last-of-type > p {
+    margin: 16px 0 24px;
+}
+
+main > section:last-of-type h3 {
+    margin: 28px 0 8px;
+    font-size: 21px;
+}
+
+main > section:last-of-type > table {
+    margin-top: 24px;
+    background: var(--cor-fundo-cartao);
+}
+
+main > section:last-of-type > table th,
+main > section:last-of-type > table td {
+    border: 0;
+    border-bottom: 1px solid rgb(3 25 38 / 12%);
+    padding: 13px 16px;
+}
+
+
+body > footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+body > footer h3 {
+    color: var(--cor-creme);
+}
+
+body > footer a {
+    color: var(--cor-verde-claro);
+}
+
+body > footer a:hover {
+    color: var(--cor-creme);
+}
+
+body > footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+body > footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+body > footer h3 {
+    color: var(--cor-creme);
+}
+
+body > footer a {
+    color: var(--cor-verde-claro);
+}
+
+body > footer a:hover {
+    color: var(--cor-creme);
+
+}
+
+body > footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+/*Parte da logo no rodapé*/
+body > footer img {
+    display: block;   
+    width: 140px;      
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -12px;  
+    border-radius: 12px;
+}
+
+body > footer p {
+    max-width: 32ch;
+    margin: 0;
+}
+/*botão*/
+#acesso {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+}
+
+#abrir {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--cor-creme);
+    border-radius: 50%;
+    background: var(--cor-destaque);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
+}
+
+#painel:not([hidden]) {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
+}
+
+#painel[hidden] {
+    display: none;
+}
+
+#painel h2 {
+    margin: 0 0 16px;
+}
+
+#painel [role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#painel [role="group"] span {
+    flex-basis: 100%;
+    font-weight: 700;
+}
+
+#painel button {
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    background: var(--cor-creme);
+    color: var(--cor-principal);
+    cursor: pointer;
+    font: inherit;
+}
+
+#painel button:hover {
+    background: var(--cor-verde-claro);
+}
+
+#painel .a11y-reset {
+    margin-top: 16px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+}
+
+/* */
+#acesso svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/*efeitos */
+html.alto-contraste body {
+    background: #000;
+    color: #fff;
+}
+html.alto-contraste header,
+html.alto-contraste body > footer,
+html.alto-contraste .conceito,
+html.alto-contraste .principio,
+html.alto-contraste .estatistica {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+html.alto-contraste a,
+html.alto-contraste .estatistica strong,
+html.alto-contraste .principio h3,
+html.alto-contraste .destaque-chamada {
+    color: #ffff00;
+}
+
+html.escala-cinza {
+    filter: grayscale(100%);
+}
+
+html.fonte-legivel body,
+html.fonte-legivel button {
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.destacar-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background: #ffff99;
+    color: #000;
+}
+
+html.espacamento body {
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+}
+
+/* modo de daltonismo2*/
+html.dalt-protanopia   { 
+    filter: url(#filtro-protanopia); 
+}
+html.dalt-deuteranopia { 
+    filter: url(#filtro-deuteranopia); 
+}
+html.dalt-tritanopia   { 
+    filter: url(#filtro-tritanopia); 
+}
+
+/* tela de celular */
+@media (max-width: 760px) {
+    main {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    main > section:first-of-type,
+    main > section.projetos,
+    main > aside,
+    main > section:nth-of-type(n + 3) {
+        grid-column: 1;
+    }
+
+    main > section:nth-of-type(3) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main > section:nth-of-type(4) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    main > section:nth-of-type(5) ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* telas de celulares menores */
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 18.4px;
+    }
+
+    .marca-descricao {
+        font-size: 12.8px;
+    }
+
+    .navegacao-principal ul {
+        justify-content: center;
+        gap: 2.4px 8px;
+    }
+
+    .navegacao-principal a {
+        padding: 8px 8.8px;
+        font-size: 13.6px;
+    }
+
+    main > section:nth-of-type(3),
+    main > section:nth-of-type(4),
+    main > section:nth-of-type(5) ol {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(3) > h2 {
+        grid-column: 1;
+    }
+
+    main > section:nth-of-type(4) > p:first-child,
+    main > section:nth-of-type(4) > h2,
+    main > section:nth-of-type(4) > p:nth-of-type(2) {
+        grid-column: 1;
+    }
+}
+
+/* redução de animações */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

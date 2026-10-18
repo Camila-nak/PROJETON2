@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/galeria.css">
+    <title>Galeria - PCDireitos</title>
+</head>
+<body>
+
+        <!--Cabeçalho-->
+    <header>
+        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <h1>PCDireitos</h1>
+        <p class="marca-descricao">Pessoas com direitos</p>
+
+        <!--Navegação do cabeçalho-->
+        <nav class="navegacao-principal" aria-label="Navegação principal">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impactos</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li>
+                    <details>
+                        <summary>Saiba mais</summary>
+                        <ul>
+                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="midia.html">Mídia</a></li>
+                            <li><a href="noticia.html">Notícias</a></li>
+                            <li><a href="contato.html">Contato</a></li>
+                            <li><a href="orcamento_hospedagem.html">Orçamento e Hospedagem</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </nav> 
+    </header>
+
+    <!-- Conteúdo principal-->
+    <main>
+        <section>
+            <p>📷 GALERIA INCLUI</p>
+            <h1>Diferentes corpos. Infinitas histórias.</h1>
+            <p>Um ensaio visual sobre autonomia, identidade, convivência e o direito de ocupar todos os espaços.</p>
+        </section>
+
+        <section>
+            <figure>
+                <img src="imgs/galeria/conviver.jpg" alt="Estudantes estudando ao ar livre">
+                <figcaption>
+                    <h2>Pertencer é estar junto</h2>
+                    <p>descrição</p>
+                    <p>Fotografia: <a href="https://www.pexels.com/es-es/foto/estudiantes-estudiando-al-aire-libre-con-baloncesto-37707048/" target="_blank">Florencia Pérez / Pexels</a></p>
+                </figcaption>
+            </figure>
+
+            <!--se conseguir deixar do lado da da <figure> de cima, como se fosse uma frase motivacional de imagem/tela-->
+            <blockquote>
+                <p>“Representar é permitir que mais pessoas se reconheçam como parte da história.”</p>
+                <footer>
+                    Esta seleção evita reduzir pessoas à deficiência. Cada imagem valoriza experiências,
+                    relações e conquistas em contextos reais.
+                </footer>
+            </blockquote>
+        </section>
+
+        <!--Parte visual/galeria-->
+        <section id="acervoinicio">
+            <p>ACERVO VISUAL</p>
+            <h2>Olhares sobre inclusão.</h2>
+
+            <!-- Filtros DE links para cada categoria de imagem-->
+            <nav aria-label="Categorias da galeria">
+                <ul>
+                    <li><a href="#todas">Todas</a></li>
+                    <li><a href="#convivencia">Convivência</a></li>
+                    <li><a href="#esporte">Esporte</a></li>
+                    <li><a href="#acessibilidade">Acessibilidade</a></li>
+                    <li><a href="#comunicacao">Comunicação</a></li>
+                    <li><a href="#natureza">Natureza</a></li>
+                    <li><a href="#autonomia">Autonomia</a></li>
+                </ul>
+            </nav>
+
+            <div id="todas">
+
+                <article id="convivencia">
+                    <figure>
+                        <img src="imgs/galeria/conviver.jpg" alt="Estudante estudando ao ar livre">
+                        <figcaption><strong>Convivência</strong></figcaption>
+                    </figure>
+                    <p><small>Estudante estudando ao ar livre</small></p>
+                    <h3>Pertencer é estar junto</h3>
+                    <p>Um encontro entre amigos registra a inclusão como ela deve ser: cotidiana, espontânea e cheia de afeto.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/es-es/foto/estudiantes-estudiando-al-aire-libre-con-baloncesto-37707048/" target="_blank">Florencia Pérez / Pexels</a></p>
+                </article>
+
+                <article id="esporte">
+                    <figure>
+                        <img src="imgs/galeria/esporte.jpg" alt="Homens jogando esporte basquete">
+                        <figcaption><strong>Esporte</strong></figcaption>
+                    </figure>
+                    <p><small>Homens jogando basquete</small></p>
+                    <h3>Superando limites</h3>
+                    <p>O esporte adaptado promove inclusão, autoestima e bem-estar físico e mental.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/homens-jogando-esporte-basquetebol-6763747/" target="_blank">Kampus Production / Pexels</a></p>
+                </article>
+
+                <article id="acessibilidade">
+                    <figure>
+                        <img src="imgs/galeria/placa.jpg" alt="Placa de estacionamento acessivel em fundo de parede de tijolos">
+                        <figcaption><strong>Acessibilidade</strong></figcaption>
+                    </figure>
+                    <p><small>Placa de estacionamento acessivel em fundo de parede de tijolos</small></p>
+                    <h3>Autonomia pela cidade</h3>
+                    <p>Cidades acessíveis começam por rotas seguras, transporte adequado e respeito ao direito de ir e vir.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/placa-de-estacionamento-acessivel-em-fundo-de-parede-de-tijolos-28733330/" target="_blank">Jan van der Wolf / Pexels</a></p>
+                </article>
+
+                <article id="comunicacao">
+                    <figure>
+                        <img src="imgs/galeria/conversa.jpg" alt="Pessoas conversando em uma mesa com computador">
+                        <figcaption><strong>Comunicação</strong></figcaption>
+                    </figure>
+                    <p><small>Pessoas conversando em uma mesa com computador</small></p>
+                    <h3>Mãos que comunicam</h3>
+                    <p>Línguas de sinais são expressão, identidade e cultura das comunidades surdas em todo o mundo.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/homem-pessoa-pessoas-cafe-6913239/" target="_blank">Tima Miroshnichenko / Pexels</a></p>
+                </article>
+
+                <article id="natureza">
+                    <figure>
+                        <img src="imgs/galeria/uniao.jpg" alt="Três pessoas relaxando a beira de um lago">
+                        <figcaption><strong>Natureza</strong></figcaption>
+                    </figure>
+                    <p><small>Três pessoas relaxando a beira de um lago</small></p>
+                    <h3>Cultivar com autonomia</h3>
+                    <p>Canteiros elevados e caminhos acessíveis tornam hortas e jardins espaços reais de participação.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/relaxando-a-beira-do-lago-no-parque-ibirapuera-sao-paulo-34161929/" target="_blank">Ariyan / Pexels</a></p>
+                </article>
+
+                <article id="esporte">
+                    <figure>
+                        <img src="imgs/galeria/esgrima.jpg" alt="Homens em cadeiras de rodas praticando esporte esgrima">
+                        <figcaption><strong>Esporte</strong></figcaption>
+                    </figure>
+                    <p><small>Homens em cadeiras de rodas praticando esporte esgrima</small></p>
+                    <h3>Esporte que reúne</h3>
+                    <p>Competições adaptadas criam comunidade, visibilidade e novos caminhos para atletas com deficiência.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/homens-sentado-esporte-concorrencia-9643398/" target="_blank">Ron Lach / Pexels</a></p>
+                </article>
+
+                <article id="autonomia">
+                    <figure>
+                        <img src="imgs/galeria/social.jpg" alt="Uma família multigeracional sorri junta para uma foto em uma estrada rural ensolarada, com o avô em uma cadeira de rodas.">
+                        <figcaption><strong>Autonomia</strong></figcaption>
+                    </figure>
+                    <p><small>Uma família multigeracional sorri junta para uma foto em uma estrada rural ensolarada, com o avô em uma cadeira de rodas.</small></p>
+                    <h3>Parceria e mobilidade</h3>
+                    <p>Cães-guia apoiam a mobilidade de pessoas cegas, mas o acesso depende também de ambientes sem barreiras.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/mulher-homens-arvores-lado-de-fora-20191413/">juliane Monari / Pexels </a></p>
+                </article>
+
+                <article id="convivencia">
+                    <figure>
+                        <img src="imgs/galeria/acesso.jpg" alt="Um homem numa cadeira de rodas trabalha numa mesa de escritório ao lado de colegas.">
+                        <figcaption><strong>Convivência</strong></figcaption>
+                    </figure>
+                    <p><small>Um homem numa cadeira de rodas trabalha numa mesa de escritório ao lado de colegas.</small></p>
+                    <h3>Decidir em conjunto</h3>
+                    <p>Participação significa ter espaço, recursos e voz para construir coletivamente as decisões.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/homem-mulher-escritorio-trabalhando-6592948/" target="_blank">Mikhail Nilov / Pexels </a></p>
+                </article>
+
+                <article id="acessibilidade">
+                    <figure>
+                        <img src="imgs/galeria/lugar.jpg" alt="">
+                        <figcaption><strong>Acessibilidade</strong></figcaption>
+                    </figure>
+                    <p><small>Um homem com síndrome de Down trabalha ao computador num ambiente de escritório, apoiando a cabeça na mão.</small></p>
+                    <h3>O espaço também comunica</h3>
+                    <p>A presença de pessoas com deficiência nos espaços públicos revela barreiras e inspira soluções melhores para todos.</p>
+                    <p>Fonte: <a href="https://www.pexels.com/pt-br/foto/homem-mesa-balcao-computador-portatil-7698285/" target="_blank">Mikhail Nilov / Pexels </a></p>
+                </article>
+            </div>
+        </section>
+
+        <!--Fonte a parte e uso responsavel (locais das retiradas da imagens)-->
+        <section>
+            <p>fontes e uso responsável</p>
+            <h2>Crédito também é cuidado</h2>
+
+            <!--Se conseguir deixar esse de um lado-->
+            <article>
+                <h3>Origem das imagens</h3>
+                <p>Todas as fotografias desta galeria foram selecionadas no #. O crédito de cada autor aparece junto à respectiva imagem.</p>
+                <p><a href="https://www.pexels.com/pt-br/" target="_blank">Visitar Pexels</a></p>
+            </article>
+
+            <article>
+                <h3>Reprentação respeitosa</h3>
+                <p>Legenas descrevem contextos sem infatilizar, generalizar ou transformar a deficiência
+                    na única característica das pessoas retratadas. </p>
+            </article>
+        </section>
+
+        <p><a href="#acervoinicio">Voltar a galeria</a></p>
+    </main>
+
+    <!--Painel acessibilidade-->
+    <div id="acesso">
+        <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
+          aria-label="Abrir painel de acessibilidade"> A+
+        </button>
+
+        <section id="painel" role="dialog" aria-labelledby="titulo" hidden>
+            <h2 id="titulo">Acessibilidade</h2>
+
+            <!--Botões de acessibilidade-->
+            <div role="group" aria-label="Tamanho do texto">
+                <span>Tamanho do texto</span>
+                <button type="button" data-acao="fonte-menos" aria-label="Diminuir texto">A−</button>
+                <button type="button" data-acao="fonte-mais" aria-label="Aumentar texto">A+</button>
+
+                <!--Botões de acessibilidade visual-->
+                <button type="button" data-toggle="alto-contraste" aria-pressed="false">Alto contraste</button>
+                <button type="button" data-toggle="escala-cinza" aria-pressed="false">Tons de cinza</button>
+                <button type="button" data-toggle="fonte-legivel" aria-pressed="false">Fonte legível</button>
+                <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
+                <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
+                <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
+                </div>
+
+            <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
+         </section>
+
+         <!--Filtros para modo daltônico-->
+         <svg aria-hidden="true" focusable="false">
+            <defs>
+                <filter id="filtro-protanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.567 0.433 0     0 0
+                        0.558 0.442 0     0 0
+                        0     0.242 0.758 0 0
+                        0     0     0     1 0"/>
+                </filter>
+                <filter id="filtro-deuteranopia">
+                    <feColorMatrix type="matrix" values="
+                        0.625 0.375 0   0 0
+                        0.7   0.3   0   0 0
+                        0     0.3   0.7 0 0
+                        0     0     0   1 0"/>
+                </filter>
+                <filter id="filtro-tritanopia">
+                    <feColorMatrix type="matrix" values="
+                        0.95 0.05  0     0 0
+                        0    0.433 0.567 0 0
+                        0    0.475 0.525 0 0
+                        0    0     0     1 0"/>
+                </filter>
+            </defs>
+        </svg>
+    </div>
+
+    <!--rodapé-->
+    <footer>
+        <section>
+            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
+        </section>
+
+        <section>
+            <h3>Navegue</h3>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="projetos.html">Projetos</a></li>
+                <li><a href="impacto.html">Impacto</a></li>
+                <li><a href="acessibilidade.html">Acessibilidade</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="noticia.html">Notícias</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
+            </ul>
+        </section>
+    </footer>
+    
+    <script src="js/painel.js"></script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+/* cores que vão ser utilizadas em todas as páginas (pensando se eu faço essas 
+cores como variáveis ou coisas assim apenas para chamar kkk)*/
+/*OBS 2, percebi que mudei os nomes em umas duas vezes*/
+:root {
+    color-scheme: light;
+    --cor-azul-marinho: #031926;
+    --cor-azul-petroleo: #468189;
+    --cor-verde-agua: #77aca4;
+    --cor-verde-claro: #9ebebd;
+    --cor-creme: #f4e9cd;
+    --cor-branco-quente: #fffdf7;
+    --largura-maxima-conteudo: 1120px;
+}
+/* padrão de links e botões */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--cor-creme);
+    color: var(--cor-azul-marinho);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+    outline: 3px solid var(--cor-verde-agua);
+    outline-offset: 4px;
+}
+
+/* cabeçalho */
+header {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    padding: 20px clamp(20px, 3vw, 48px); 
+    color: var(--cor-creme);
+    background: var(--cor-azul-marinho);
+}
+
+header > img[src="imgs/logo_PCDireitos.jpg"] {
+    grid-row: span 3;   
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+}
+
+header h1 {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: clamp(28px, 4vw, 36px);
+    line-height: 1.2;
+}
+
+.marca-descricao {
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal {
+    flex-basis: 100%;
+}
+
+.navegacao-principal ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacao-principal a,
+.navegacao-principal summary {
+    display: inline-block;
+    padding: 7.2px 1.6px;
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration-thickness: 1.92px;
+    cursor: pointer;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal a[href="sobre.html"] {
+    color: var(--cor-verde-claro);
+    text-decoration: underline;
+    text-underline-offset: 4.8px;
+}
+
+.navegacao-principal details ul {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 2.4px;
+    min-width: 208px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--cor-azul-marinho);
+    box-shadow: 0 8px 24px rgb(3 25 38 / 8%);
+}
+
+/* coisas escritas */
+main {
+    overflow: hidden;
+}
+
+main > section {
+    width: min(var(--largura-maxima-conteudo), 90%);
+    margin-inline: auto;
+    padding-block: clamp(48px, 7vw, 88px);
+}
+
+main > section:first-of-type {
+    position: relative;
+    isolation: isolate;
+    padding-block: clamp(72px, 10vw, 120px);
+}
+
+main > section > img[src="#"] {
+    display: none;
+}
+/*escolhe a lista numerada (<ol>) da seção
+ “Nossos valores”, e as regras dentro dele transformam essa lista em uma grade de cartões*/
+main > section:first-of-type > p:first-of-type,
+main > section:nth-of-type(2) > p:first-of-type,
+main > section:nth-of-type(3) > p:first-of-type,
+main > section:nth-of-type(4) > p:first-of-type,
+main > section:nth-of-type(5) > p:first-of-type {
+    margin: 0 0 12.8px;
+    color: var(--cor-azul-petroleo);
+    font-size: 13.6px;
+    font-weight: 700;
+    letter-spacing: 2.24px;
+    text-transform: uppercase;
+}
+
+main > section:first-of-type h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(43.2px, 7vw, 88px);
+    letter-spacing: -0.88px;
+    line-height: 1.02;
+}
+
+main > section:first-of-type > p:nth-of-type(2) {
+    max-width: 700px;
+    margin: 24px 0 0;
+    color: #1d728b;
+    font-size: clamp(16.8px, 2vw, 19.2px);
+}
+
+main > section:first-of-type > p:last-child {
+    margin-top: 28px;
+}
+
+main > section:first-of-type > p:last-child a {
+    display: inline-block;
+    padding: 11.2px 17.6px;
+    border-radius: 8.8px;
+    background: var(--cor-azul-marinho);
+    color: var(--cor-creme);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 180ms ease, transform 180ms ease;
+}
+
+main > section:first-of-type > p:last-child a:hover {
+    transform: translateY(-2px);
+    background: var(--cor-azul-petroleo);
+}
+
+main > hr {
+    width: min(var(--largura-maxima-conteudo), 90%);
+    height: 1px;
+    margin: 0 auto;
+    border: 0;
+    background: rgb(3 25 38 / 16%);
+}
+
+main > section:nth-of-type(2) > p:last-child {
+    max-width: 78ch;
+    margin-bottom: 0;
+    color: #29434b;
+    font-size: 16.8px;
+}
+/*mantém o mesmo padrão nos títulos <h2> das sessões ou seções? 3, 4 e 5: “O que nos move e
+ aonde queremos chegar?”, “Principios presentes em cada escolha” e o do manifesto*/
+main > section:nth-of-type(3) h2,
+main > section:nth-of-type(4) h2,
+main > section:nth-of-type(5) h2 {
+    max-width: 850px;
+    margin: 0 0 24px;
+    font-size: clamp(28.8px, 4vw, 48px);
+    letter-spacing: -0.56px;
+    line-height: 1.15;
+}
+
+main > section:nth-of-type(3) article {
+    display: inline-block;
+    width: calc(50% - 10.4px);
+    min-height: 100%;
+    margin: 5.6px 8px 5.6px 0;
+    padding: clamp(20.8px, 3vw, 32px);
+    vertical-align: top;
+    border: 1px solid rgb(70 129 137 / 20%);
+    border-radius: 19.2px;
+    background: var(--cor-branco-quente);
+    box-shadow: 0 12px 32px rgb(3 25 38 / 7%);
+}
+
+main > section:nth-of-type(3) article:last-child {
+    margin-right: 0;
+}
+
+main > section:nth-of-type(3) article p:first-child {
+    margin: 0 0 8.8px;
+    color: var(--cor-azul-petroleo);
+    font-size: 13.6px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+}
+
+main > section:nth-of-type(3) article h3,
+main > section:nth-of-type(4) li h3 {
+    margin: 0 0 11.2px;
+    color: var(--cor-azul-petroleo);
+    font-size: 20px;
+    line-height: 1.3;
+}
+
+main > section:nth-of-type(3) article p:last-child,
+main > section:nth-of-type(4) li p {
+    margin: 0;
+}
+
+main > section:nth-of-type(4) > p:nth-of-type(2) {
+    max-width: 65ch;
+    margin: -8px 0 24px;
+}
+
+main > section:nth-of-type(4) ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17.6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: valores;
+}
+
+main > section:nth-of-type(4) li {
+    position: relative;
+    min-height: 176px;
+    padding: 24px;
+    border: 1px solid rgb(70 129 137 / 20%);
+    border-radius: 19.2px;
+    background: var(--cor-branco-quente);
+    box-shadow: 0 12px 32px rgb(3 25 38 / 7%);
+    counter-increment: valores;
+}
+
+main > section:nth-of-type(4) li::before {
+    display: block;
+    margin-bottom: 8.8px;
+    color: var(--cor-azul-petroleo);
+    content: "0" counter(valores);
+    font-size: 12.8px;
+    font-weight: 700;
+    letter-spacing: 1.92px;
+}
+
+main > section:nth-of-type(5) {
+    width: 100%;
+    padding: clamp(56px, 8vw, 96px) max(5%, calc((100vw - var(--largura-maxima-conteudo)) / 2));
+    background: var(--cor-verde-claro);
+}
+
+main > section:nth-of-type(5) h2 {
+    max-width: 900px;
+}
+
+main > section:nth-of-type(5) > p:last-child {
+    max-width: 75ch;
+    margin-bottom: 0;
+}
+
+/* pparte de baixo (rodapé) */
+footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-azul-marinho);
+}
+
+footer h3 {
+    color: var(--cor-creme);
+}
+
+footer a {
+    color: var(--cor-verde-claro);
+}
+
+footer a:hover {
+    color: var(--cor-creme);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+/*Parte da logo no rodapé*/
+footer img {
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    border-radius: 12px;
+}
+
+footer p {
+    max-width: 32ch;
+    margin: 0;
+}
+
+/* botão */
+#acesso {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+}
+
+#abrir {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--cor-creme);
+    border-radius: 50%;
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
+}
+
+#painel:not([hidden]) {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 16px;
+    background: var(--cor-branco-quente);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
+}
+
+#painel[hidden] {
+    display: none;
+}
+
+#painel h2 {
+    margin: 0 0 16px;
+}
+
+#painel [role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#painel [role="group"] span {
+    flex-basis: 100%;
+    font-weight: 700;
+}
+
+#painel button {
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-azul-petroleo);
+    border-radius: 8px;
+    background: var(--cor-creme);
+    color: var(--cor-azul-marinho);
+    cursor: pointer;
+    font: inherit;
+}
+
+#painel button:hover {
+    background: var(--cor-verde-claro);
+}
+
+#painel .a11y-reset {
+    margin-top: 16px;
+    background: var(--cor-azul-marinho);
+    color: var(--cor-creme);
+}
+
+/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
+#acesso svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
+html.alto-contraste body {
+    background: #000;
+    color: #fff;
+}
+html.alto-contraste header,
+html.alto-contraste footer,
+html.alto-contraste .conceito,
+html.alto-contraste .principio,
+html.alto-contraste .estatistica {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+html.alto-contraste a,
+html.alto-contraste .estatistica strong,
+html.alto-contraste .principio h3,
+html.alto-contraste .destaque-chamada {
+    color: #ffff00;
+}
+
+html.escala-cinza {
+    filter: grayscale(100%);
+}
+
+html.fonte-legivel body,
+html.fonte-legivel button {
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.destacar-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background: #ffff99;
+    color: #000;
+}
+
+html.espacamento body {
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+}
+
+/* ===== Modos para daltonismo ===== */
+html.dalt-protanopia   { 
+    filter: url(#filtro-protanopia); 
+}
+html.dalt-deuteranopia { 
+    filter: url(#filtro-deuteranopia); 
+}
+html.dalt-tritanopia   { 
+    filter: url(#filtro-tritanopia); 
+}
+
+/* tela de celular */
+@media (max-width: 760px) {
+    header {
+        gap: 9.6px 16px;
+    }
+
+    .navegacao-principal ul {
+        justify-content: center;
+    }
+
+    main > section:nth-of-type(4) ol {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
+
+/* telas menores */
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 18.4px;
+    }
+
+    .marca-descricao {
+        font-size: 11.52px;
+    }
+
+    main > section:nth-of-type(3) article {
+        display: block;
+        width: 100%;
+        margin: 12px 0;
+    }
+
+    main > section:nth-of-type(4) ol {
+        grid-template-columns: 1fr;
+    }
+
+    .navegacao-principal ul {
+        gap: 2.4px;
+    }
+
+    .navegacao-principal a {
+        padding: 8px 8.8px;
+        font-size: 13.6px;
+    }
+}
+
+

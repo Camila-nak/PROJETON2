@@ -1,0 +1,488 @@
+:root {
+    /*  :P */
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #031926;
+    background: #f4e9cd;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    --cor-azul-marinho: #031926;
+    --cor-azul-petroleo: #468189;
+    --cor-verde-agua: #77aca4;
+    --cor-verde-claro: #9ebebd;
+    --cor-creme: #f4e9cd;
+    --cor-branco-quente: #fffdf7;
+    --largura-maxima-conteudo: 1120px;
+    --cor-principal: #031926;
+    --cor-destaque: #468189;
+    --cor-fundo-cartao: #fffdf7;
+    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%);
+}
+
+/* bordas e preenchimentos no cálculo da largura */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px; /* Evita que a tela fique estreita demais */
+    margin: 0;
+}
+
+a {
+    color: var(--cor-azul-marinho);
+    text-underline-offset: 3.2px; /* separa o sublinhado das letras */
+}
+
+/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
+a:hover {
+    color: var(--cor-azul-petroleo);
+}
+
+/*  destaca o elemento que recebeu foco, como na navegação pelo tab */
+:focus-visible {
+    outline: 3px solid var(--cor-verde-agua);
+    outline-offset: 4px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    align-items: center;
+    padding: 20px clamp(20px, 3vw, 48px);
+    color: var(--cor-creme);
+    background: var(--cor-azul-marinho);
+}
+
+header > img[src="imgs/logo_PCDireitos.jpg"] {
+    grid-row: span 3;   /* logo ocupa as 3 linhas */
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+}
+
+header h1 {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: clamp(28px, 4vw, 36px); /* Tamanho que se adapta a tela */
+    line-height: 1.2;
+}
+
+.marca-descricao {
+    /* O ponto '.' seleciona uma classe do html onde identifica a frase */
+    flex-basis: 100%;
+    margin: 0;
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal {
+    flex-basis: 100%;
+}
+
+.navegacao-principal ul {
+    /* "navegacao-principal" é onde ficam os links principais e a ul seleciona
+       a lista de links que está dentro dela */
+    /*  o flex vai organizar os itens em linha e o flex-wrap vai quebrar em outra linha quando não houver espaço*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacao-principal a,
+.navegacao-principal summary {
+    /* A vírgula combina seletores */
+    display: inline-block;
+    padding: 7.2px 1.6px;
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration-thickness: 1.92px;
+    cursor: pointer;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal a[href="impacto.html"] {
+    color: var(--cor-verde-claro);
+    text-decoration: underline;
+    text-underline-offset: 4.8px;
+}
+
+.navegacao-principal details ul {
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 2.4px;
+    min-width: 208px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--cor-azul-marinho);
+    box-shadow: var(--sombra-cartao);
+}
+
+.navegacao-principal details {
+    position: relative;
+}
+
+main {
+    padding: 0 20px 48px;
+}
+
+main > section {
+    width: min(100%, 1152px);
+    margin-inline: auto;
+}
+
+main > section:first-of-type {
+    padding-block: clamp(56px, 9vw, 104px);
+    text-align: center;
+}
+
+main > section:first-of-type > p:first-child {
+    margin: 0 0 9.6px;
+    color: var(--cor-azul-petroleo);
+    font-size: 14.4px;
+    font-weight: 700;
+    letter-spacing: 1.92px;
+    text-transform: uppercase;
+}
+
+main > section:first-of-type h1 {
+    margin: 0 0 12px;
+    font-size: clamp(40px, 7vw, 72px);
+    line-height: 1.1;
+}
+
+main > section:first-of-type > p:last-child {
+    max-width: 736px;
+    margin: 0 auto;
+    font-size: clamp(16px, 2vw, 19.2px);
+}
+
+main > section:nth-of-type(n + 2) {
+    margin-bottom: 32px;
+    padding: clamp(16px, 3vw, 32px);
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+}
+
+main > section:nth-of-type(n + 2) h2 {
+    margin: 0 0 20px;
+    font-size: clamp(22.4px, 3vw, 32px);
+    line-height: 1.25;
+}
+
+main > section:nth-of-type(n + 2) > div {
+    overflow-x: auto;
+    border-radius: 10.4px;
+    scrollbar-color: var(--cor-azul-petroleo) var(--cor-creme);
+}
+
+table {
+    width: 100%;
+    min-width: 608px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+caption {
+    padding: 0 0 13.6px;
+    color: var(--cor-azul-marinho);
+    font-weight: 700;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 13.6px 16px;
+    border-bottom: 1px solid rgb(3 25 38 / 12%);
+}
+
+thead th {
+    background: var(--cor-azul-marinho);
+    color: var(--cor-creme);
+}
+
+tbody th {
+    font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+    background: rgb(244 233 205 / 45%);
+}
+
+tbody tr:hover {
+    background: rgb(119 172 164 / 20%);
+}
+
+tfoot th,
+tfoot td {
+    border-bottom: 0;
+    background: rgb(70 129 137 / 14%);
+    font-weight: 700;
+}
+
+footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-azul-marinho);
+}
+
+footer h3 {
+    color: var(--cor-creme);
+}
+
+footer a {
+    color: var(--cor-verde-claro);
+}
+
+footer a:hover {
+    color: var(--cor-creme);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+footer h3 {
+    color: var(--cor-creme);
+}
+
+footer a {
+    color: var(--cor-verde-claro);
+}
+
+footer a:hover {
+    color: var(--cor-creme);
+}
+
+footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+/*Parte da logo no rodapé*/
+footer img {
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    border-radius: 12px;
+}
+
+footer p {
+    max-width: 32ch;
+    margin: 0;
+}
+
+#acesso {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+}
+
+#abrir {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--cor-creme);
+    border-radius: 50%;
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
+}
+
+#painel:not([hidden]) {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
+}
+
+#painel[hidden] {
+    display: none;
+}
+
+#painel h2 {
+    margin: 0 0 16px;
+}
+
+#painel [role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#painel [role="group"] span {
+    flex-basis: 100%;
+    font-weight: 700;
+}
+
+#painel button {
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-azul-petroleo);
+    border-radius: 8px;
+    background: var(--cor-creme);
+    color: var(--cor-azul-marinho);
+    cursor: pointer;
+    font: inherit;
+}
+
+#painel button:hover {
+    background: var(--cor-verde-claro);
+}
+
+#painel .a11y-reset {
+    margin-top: 16px;
+    background: var(--cor-azul-marinho);
+    color: var(--cor-creme);
+}
+
+/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
+#acesso svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
+html.alto-contraste body {
+    background: #000;
+    color: #fff;
+}
+html.alto-contraste header,
+html.alto-contraste footer,
+html.alto-contraste .conceito,
+html.alto-contraste .principio,
+html.alto-contraste .estatistica {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+html.alto-contraste a,
+html.alto-contraste .estatistica strong,
+html.alto-contraste .principio h3,
+html.alto-contraste .destaque-chamada {
+    color: #ffff00;
+}
+
+html.escala-cinza {
+    filter: grayscale(100%);
+}
+
+html.fonte-legivel body,
+html.fonte-legivel button {
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.destacar-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background: #ffff99;
+    color: #000;
+}
+
+html.espacamento body {
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+}
+
+/* ===== Modos para daltonismo ===== */
+html.dalt-protanopia   { 
+    filter: url(#filtro-protanopia); 
+}
+html.dalt-deuteranopia { 
+    filter: url(#filtro-deuteranopia); 
+}
+html.dalt-tritanopia   { 
+    filter: url(#filtro-tritanopia); 
+}
+
+@media (max-width: 760px) {
+    .navegacao-principal ul {
+        justify-content: center;
+    }
+
+    footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 420px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    .navegacao-principal ul {
+        gap: 2.4px 8px;
+    }
+
+    .navegacao-principal a,
+    .navegacao-principal summary {
+        padding: 8px 8.8px;
+        font-size: 13.6px;
+    }
+
+    main > section:nth-of-type(n + 2) {
+        padding: 16px;
+    }
+
+    th,
+    td {
+        padding: 11.2px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+    }
+}

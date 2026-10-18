@@ -1,0 +1,648 @@
+:root {
+    /* Paleta */
+    color-scheme: light;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #031926;
+    background: #f4e9cd;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    line-height: 1.6;
+    --cor-principal: #031926; /*títulos, cabeçalho e rodapé */
+    --cor-destaque: #468189; /* botões e detalhes */
+    --cor-verde-agua: #77aca4; /* foco do teclado*/
+    --cor-verde-claro: #9ebebd; /* textos e fundos mais leves/suaves */
+    --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
+    --cor-fundo-cartao: #fffdf7; /* artões e painel */
+    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+}
+
+/* bordas e preenchimentos no cálculo da largura */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px; /* wvita que a tela fique estreita demais */
+    margin: 0;
+}
+
+a {
+    color: var(--cor-principal);
+    text-underline-offset: 3.2px; /* separa o sublinhado das letras */
+}
+
+/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
+a:hover {
+    color: var(--cor-destaque);
+}
+
+/*  destaca o elemento que recebeu foco, como na navegação pelo tab */
+:focus-visible {
+    outline: 3px solid var(--cor-verde-agua);
+    outline-offset: 4px;
+}
+
+header {
+    padding: 20px clamp(20px, 3vw, 48px); 
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 24px;
+    align-items: center;
+}
+
+header > img[src="imgs/logo_PCDireitos.jpg"] {
+    grid-row: span 3;   /* logo ocupa as 3 linhas */
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 36px); /* Tamanho que se adapta a tela */
+    line-height: 1.2;
+}
+
+.marca-descricao {
+    /* O ponto '.' seleciona uma classe do html onde identifica a frase */
+    margin: 3.2px 0 16px;
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal ul {
+    /* "navegacao-principal" é onde ficam os links principais e a ul seleciona
+       a lista de links que está dentro dela */
+    /*  o flex vai organizar os itens em linha e o flex-wrap vai quebrar em outra linha quando não houver espaço*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5.6px 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navegacao-principal a,
+.navegacao-principal summary {
+    /* A vírgula combina seletores */
+    display: inline-block;
+    padding: 7.2px 1.6px;
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration-thickness: 1.92px;
+    cursor: pointer;
+}
+
+.navegacao-principal a:hover {
+    color: var(--cor-verde-claro);
+}
+
+.navegacao-principal a[href="galeria.html"] {
+    color: var(--cor-verde-claro);
+    text-decoration: underline;
+    text-underline-offset: 4.8px;
+}
+
+.navegacao-principal details ul {
+    
+    position: absolute;
+    z-index: 2;
+    display: grid;
+    gap: 2.4px;
+    min-width: 208px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: var(--cor-principal);
+    box-shadow: var(--sombra-cartao);
+}
+
+
+
+main {
+    display: grid;
+    gap: clamp(32px, 6vw, 72px);
+    padding: 0 20px 56px;
+}
+
+main > section {
+    width: min(100%, 1152px);
+    margin-inline: auto;
+}
+
+main > section:first-of-type {
+    padding-block: clamp(48px, 9vw, 104px) clamp(24px, 5vw, 56px);
+}
+
+main > section:first-of-type > p:first-child,
+main > section:nth-of-type(3) > p:first-child,
+main > section:nth-of-type(4) > p:first-child {
+    margin: 0 0 12px;
+    color: var(--cor-destaque);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+main > section:first-of-type h1 {
+    max-width: 850px;
+    margin: 0;
+    font-size: clamp(40px, 7vw, 76px);
+    letter-spacing: -1.5px;
+    line-height: 1.05;
+}
+
+main > section:first-of-type > p:last-child {
+    max-width: 650px;
+    margin: 20px 0 0;
+    color: #29434b;
+    font-size: clamp(17px, 2vw, 20px);
+}
+
+main > section:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    align-items: stretch;
+    gap: 24px;
+}
+
+main > section:nth-of-type(2) figure {
+    position: relative;
+    min-height: 320px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: var(--cor-verde-claro);
+}
+
+main > section:nth-of-type(2) figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 320px;
+    object-fit: cover;
+}
+
+main > section:nth-of-type(2) figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 56px 24px 24px;
+    color: #fff;
+    background: linear-gradient(transparent, rgb(3 25 38 / 88%));
+}
+
+main > section:nth-of-type(2) figcaption h2 {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 34px);
+}
+
+main > section:nth-of-type(2) figcaption p {
+    margin: 8px 0 0;
+}
+
+main > section:nth-of-type(2) figcaption a {
+    color: var(--cor-creme);
+}
+
+main > section:nth-of-type(2) blockquote {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    padding: clamp(24px, 4vw, 44px);
+    border-radius: 20px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+}
+
+main > section:nth-of-type(2) blockquote > p {
+    margin: 0 0 24px;
+    color: var(--cor-verde-claro);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+main > section:nth-of-type(2) blockquote footer {
+    color: var(--cor-creme);
+    font-size: 15px;
+}
+
+main > section:nth-of-type(3) > h2 {
+    margin: 0 0 24px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15;
+}
+
+main > section:nth-of-type(3) nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+}
+
+main > section:nth-of-type(3) nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 999px;
+    background: var(--cor-fundo-cartao);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+}
+
+main > section:nth-of-type(3) nav a:hover {
+    border-color: var(--cor-destaque);
+    background: var(--cor-destaque);
+    color: #fff;
+}
+/*esse 'todas' são as imagens, viu?  são as credenciais que coloquei 
+nelas para ter todas os mesmo parâmetros*/
+#todas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+    gap: 22px;
+}
+
+#todas article {
+    min-width: 0;
+    overflow: hidden;
+    border: 1px solid rgb(3 25 38 / 8%);
+    border-radius: 16px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+    scroll-margin-top: 24px;
+}
+
+#todas article figure {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background: var(--cor-verde-claro);
+}
+
+#todas article figure img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform 220ms ease;
+}
+
+#todas article:hover figure img {
+    transform: scale(1.04);
+}
+
+#todas article figcaption {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    font-size: 13px;
+}
+
+#todas article > p,
+#todas article h3 {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#todas article > p:first-of-type {
+    margin-top: 16px;
+    margin-bottom: 6px;
+    color: #496168;
+    font-size: 13px;
+}
+
+#todas article h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+#todas article > p:not(:first-of-type) {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+#todas article > p:last-child {
+    padding-top: 12px;
+    border-top: 1px solid rgb(3 25 38 / 10%);
+    color: #496168;
+    font-size: 13px;
+}
+
+main > section:nth-of-type(4) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+    padding: clamp(24px, 5vw, 48px);
+    border-radius: 20px;
+    background: rgb(158 190 189 / 35%);
+}
+
+main > section:nth-of-type(4) > p:first-child,
+main > section:nth-of-type(4) > h2 {
+    grid-column: 1 / -1;
+}
+
+main > section:nth-of-type(4) > h2 {
+    margin: -16px 0 0;
+    font-size: clamp(28px, 4vw, 40px);
+}
+
+main > section:nth-of-type(4) article {
+    padding: 22px;
+    border-radius: 14px;
+    background: var(--cor-fundo-cartao);
+}
+
+main > section:nth-of-type(4) article h3 {
+    margin: 0 0 8px;
+}
+
+main > section:nth-of-type(4) article p:last-child {
+    margin-bottom: 0;
+}
+
+main > p:last-child {
+    width: min(100%, 1152px);
+    margin: -28px auto 0;
+}
+
+main > p:last-child a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+main > p:last-child a:hover {
+    background: var(--cor-destaque);
+}
+
+@media (max-width: 680px) {
+    main {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    main > section:nth-of-type(2) {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(2) figure,
+    main > section:nth-of-type(2) figure img {
+        min-height: 280px;
+    }
+
+    main > section:nth-of-type(4) {
+        grid-template-columns: 1fr;
+    }
+
+    main > section:nth-of-type(4) > p:first-child,
+    main > section:nth-of-type(4) > h2 {
+        grid-column: auto;
+    }
+
+    main > section:nth-of-type(4) > h2 {
+        margin-top: -16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+body > footer {
+    /* auto-fit adapta a quantidade à largura */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+body > footer h3 {
+    color: var(--cor-creme);
+}
+
+body > footer a {
+    color: var(--cor-verde-claro);
+}
+
+body > footer a:hover {
+    color: var(--cor-creme);
+}
+
+body > footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+body > footer {
+    /* auto-fit adapta a quantidade à largura2 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
+    gap: 32px;
+    padding: 32px max(20px, calc((100% - 1152px) / 2));
+    color: var(--cor-creme);
+    background: var(--cor-principal);
+}
+
+body > footer h3 {
+    color: var(--cor-creme);
+}
+
+body > footer a {
+    color: var(--cor-verde-claro);
+}
+
+body > footer a:hover {
+    color: var(--cor-creme);
+}
+
+body > footer ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
+    gap: 5.6px 16px;
+    padding-left: 20px;
+}
+
+/*Parte da logo no rodapé*/
+body > footer img {
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
+    height: auto;
+    margin-bottom: 12px;
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    border-radius: 12px;
+}
+
+body > footer p {
+    max-width: 32ch;
+    margin: 0;
+}
+
+/* Botão*/
+#acesso {
+    position: fixed;
+    z-index: 10;
+    right: 20px;
+    bottom: 20px;
+}
+
+#abrir {
+    width: 56px;
+    height: 56px;
+    border: 2px solid var(--cor-creme);
+    border-radius: 50%;
+    background: var(--cor-destaque);
+    color: var(--cor-creme);
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
+}
+
+#painel:not([hidden]) {
+    /* Posiciona o painel em cima */
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    padding: 20px;
+    border: 1px solid var(--cor-verde-claro);
+    border-radius: 16px;
+    background: var(--cor-branco-quente);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
+    text-align: left;
+}
+
+#painel[hidden] {
+    /* o painel fica oculto não ocupando espaço e nem ficando visível */
+    display: none;
+}
+
+#painel h2 {
+    margin: 0 0 16px;
+}
+
+#painel [role="group"] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+#painel [role="group"] span {
+    flex-basis: 100%;
+    font-weight: 700;
+}
+
+#painel button {
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    background: var(--cor-creme);
+    color: var(--cor-principal);
+    cursor: pointer;
+    font: inherit;
+}
+
+#painel button:hover {
+    background: var(--cor-verde-claro);
+}
+
+#painel .a11y-reset {
+    margin-top: 16px;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+}
+
+/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
+#acesso svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+/*são os efeitos que foram colocados no html e javas */
+html.alto-contraste body {
+    background: #000;
+    color: #fff;
+}
+html.alto-contraste header,
+html.alto-contraste body > footer,
+html.alto-contraste .conceito,
+html.alto-contraste .principio,
+html.alto-contraste .estatistica {
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+html.alto-contraste a,
+html.alto-contraste .estatistica strong,
+html.alto-contraste .principio h3,
+html.alto-contraste .destaque-chamada {
+    color: #ffff00;
+}
+
+html.escala-cinza {
+    filter: grayscale(100%);
+}
+
+html.fonte-legivel body,
+html.fonte-legivel button {
+    font-family: Verdana, Arial, sans-serif;
+    letter-spacing: 0.03em;
+}
+
+html.destacar-links a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    background: #ffff99;
+    color: #000;
+}
+
+html.espacamento body {
+    line-height: 1.9;
+    letter-spacing: 0.05em;
+    word-spacing: 0.15em;
+}
+
+/* modos para o daltonismo */
+html.dalt-protanopia   { 
+    filter: url(#filtro-protanopia); 
+}
+html.dalt-deuteranopia { 
+    filter: url(#filtro-deuteranopia); 
+}
+html.dalt-tritanopia   { 
+    filter: url(#filtro-tritanopia); 
+}
