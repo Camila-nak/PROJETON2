@@ -450,6 +450,36 @@ html.dalt-tritanopia   {
     filter: url(#filtro-tritanopia); 
 }
 
+/* ===== NOVO: leitura em voz alta ===== */
+#painel .grupo-leitura {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-verde-claro);
+}
+
+#painel .grupo-leitura label {
+    flex-basis: 100%;
+}
+
+#painel input[type="range"] {
+    vertical-align: middle;
+    width: 150px;
+}
+
+/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
+#painel button[aria-pressed="true"] {
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+}
+
+/* item que está sendo lido agora */
+.lendo-agora {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 2px;
+    background: rgb(255 191 0 / 25%) !important;
+    scroll-margin: 120px;
+}
+
 /* tela de celular */
 @media (max-width: 760px) {
     header {

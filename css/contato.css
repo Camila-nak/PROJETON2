@@ -395,7 +395,7 @@ footer p {
     margin: 0;
 }
 
-/* Botão*/
+/* botão de acessibilidade */
 #acesso {
     position: fixed;
     z-index: 10;
@@ -417,7 +417,6 @@ footer p {
 }
 
 #painel:not([hidden]) {
-    /* Posiciona o painel acima do botão */
     position: absolute;
     right: 0;
     bottom: calc(100% + 12.8px);
@@ -429,11 +428,9 @@ footer p {
     border-radius: 16px;
     background: var(--cor-branco-quente);
     box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
-    text-align: left;
 }
 
 #painel[hidden] {
-    /* o painel fica oculto não ocupando espaço e nem ficando visível */
     display: none;
 }
 
@@ -481,7 +478,7 @@ footer p {
     pointer-events: none;
 }
 
-/* Efeitos aplicados no <html> pelo JS */
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
 html.alto-contraste body {
     background: #000;
     color: #fff;
@@ -525,7 +522,7 @@ html.espacamento body {
     word-spacing: 0.15em;
 }
 
-/* Modos para daltonismo */
+/* ===== Modos para daltonismo ===== */
 html.dalt-protanopia   { 
     filter: url(#filtro-protanopia); 
 }
@@ -534,6 +531,36 @@ html.dalt-deuteranopia {
 }
 html.dalt-tritanopia   { 
     filter: url(#filtro-tritanopia); 
+}
+
+/* ===== NOVO: leitura em voz alta ===== */
+#painel .grupo-leitura {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-verde-claro);
+}
+
+#painel .grupo-leitura label {
+    flex-basis: 100%;
+}
+
+#painel input[type="range"] {
+    vertical-align: middle;
+    width: 150px;
+}
+
+/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
+#painel button[aria-pressed="true"] {
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+}
+
+/* item que está sendo lido agora */
+.lendo-agora {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 2px;
+    background: rgb(255 191 0 / 25%) !important;
+    scroll-margin: 120px;
 }
 
 @media (max-width: 760px) {

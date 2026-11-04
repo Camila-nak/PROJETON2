@@ -363,7 +363,8 @@ body > footer p {
     max-width: 32ch;
     margin: 0;
 }
-/*botão*/
+
+/* botão de acessibilidade */
 #acesso {
     position: fixed;
     z-index: 10;
@@ -376,7 +377,7 @@ body > footer p {
     height: 56px;
     border: 2px solid var(--cor-creme);
     border-radius: 50%;
-    background: var(--cor-destaque);
+    background: var(--cor-azul-petroleo);
     color: var(--cor-creme);
     cursor: pointer;
     font-size: 20px;
@@ -394,7 +395,7 @@ body > footer p {
     padding: 20px;
     border: 1px solid var(--cor-verde-claro);
     border-radius: 16px;
-    background: var(--cor-fundo-cartao);
+    background: var(--cor-branco-quente);
     box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
 }
 
@@ -419,10 +420,10 @@ body > footer p {
 
 #painel button {
     padding: 7.2px 10.4px;
-    border: 1px solid var(--cor-destaque);
+    border: 1px solid var(--cor-azul-petroleo);
     border-radius: 8px;
     background: var(--cor-creme);
-    color: var(--cor-principal);
+    color: var(--cor-azul-marinho);
     cursor: pointer;
     font: inherit;
 }
@@ -433,11 +434,11 @@ body > footer p {
 
 #painel .a11y-reset {
     margin-top: 16px;
-    background: var(--cor-principal);
+    background: var(--cor-azul-marinho);
     color: var(--cor-creme);
 }
 
-/* */
+/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
 #acesso svg {
     position: absolute;
     width: 0;
@@ -446,13 +447,13 @@ body > footer p {
     pointer-events: none;
 }
 
-/*efeitos */
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
 html.alto-contraste body {
     background: #000;
     color: #fff;
 }
 html.alto-contraste header,
-html.alto-contraste body > footer,
+html.alto-contraste footer,
 html.alto-contraste .conceito,
 html.alto-contraste .principio,
 html.alto-contraste .estatistica {
@@ -490,7 +491,7 @@ html.espacamento body {
     word-spacing: 0.15em;
 }
 
-/* modo de daltonismo2*/
+/* ===== Modos para daltonismo ===== */
 html.dalt-protanopia   { 
     filter: url(#filtro-protanopia); 
 }
@@ -499,6 +500,36 @@ html.dalt-deuteranopia {
 }
 html.dalt-tritanopia   { 
     filter: url(#filtro-tritanopia); 
+}
+
+/* ===== NOVO: leitura em voz alta ===== */
+#painel .grupo-leitura {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-verde-claro);
+}
+
+#painel .grupo-leitura label {
+    flex-basis: 100%;
+}
+
+#painel input[type="range"] {
+    vertical-align: middle;
+    width: 150px;
+}
+
+/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
+#painel button[aria-pressed="true"] {
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+}
+
+/* item que está sendo lido agora */
+.lendo-agora {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 2px;
+    background: rgb(255 191 0 / 25%) !important;
+    scroll-margin: 120px;
 }
 
 /* tela de celular */

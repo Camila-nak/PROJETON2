@@ -141,7 +141,7 @@
         </section>
     </main>
     
-    <!--Painel acessibilidade-->
+        <!--Painel acessibilidade-->
     <div id="acesso">
         <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
           aria-label="Abrir painel de acessibilidade"> A+
@@ -163,13 +163,27 @@
                 <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
                 <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
                 <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
-                </div>
+            </div>
+
+            <!--NOVO: Leitura em voz alta-->
+            <div class="grupo-leitura" role="group" aria-label="Leitura em voz alta">
+                <span>Leitura em voz alta</span>
+                <button type="button" data-acao="ler-pagina" aria-label="Ler a página inteira em voz alta (atalho Alt L)">▶ Ler página</button>
+                <button type="button" data-acao="ler-selecao" aria-label="Ler somente o texto selecionado">Ler seleção</button>
+                <button type="button" data-acao="pausar" aria-pressed="false" aria-label="Pausar leitura">⏸ Pausar</button>
+                <button type="button" data-acao="parar" aria-label="Parar leitura">⏹ Parar</button>
+                <button type="button" data-toggle="leitura-foco" aria-pressed="false"
+                    aria-label="Ler em voz alta o item sob o mouse ou com foco do teclado">Ler ao passar o mouse / foco</button>
+                <label for="velocidade">Velocidade:
+                    <input type="range" id="velocidade" min="0.5" max="2" step="0.25" value="1">
+                </label>
+            </div>
 
             <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
-         </section>
+        </section>
 
-         <!--Filtros para modo daltônico-->
-         <svg aria-hidden="true" focusable="false">
+        <!--Filtros para modo daltônico-->
+        <svg aria-hidden="true" focusable="false">
             <defs>
                 <filter id="filtro-protanopia">
                     <feColorMatrix type="matrix" values="

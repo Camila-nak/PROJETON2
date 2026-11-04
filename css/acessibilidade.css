@@ -318,60 +318,42 @@ footer p {
     margin: 0;
 }
 
+/* botão de acessibilidade */
 #acesso {
-    /* # seleciona pelo id "acesso" e  O conjunto
-     fica fixo no canto inferior direito durante a rolagem */
     position: fixed;
     z-index: 10;
-    right: 16px;
-    bottom: 16px;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    gap: 12px;
-    max-width: calc(100vw - 32px);
+    right: 20px;
+    bottom: 20px;
 }
 
 #abrir {
-    /* o id "abrir" identifica o botão que abre o 
-    painel e sendo o min-width/min-height
-    definem os tamanhos mínimos */
-    min-width: 56px;
-    min-height: 56px;
-    padding: 8px;
+    width: 56px;
+    height: 56px;
     border: 2px solid var(--cor-creme);
     border-radius: 50%;
+    background: var(--cor-azul-petroleo);
     color: var(--cor-creme);
-    background: var(--cor-destaque);
-    box-shadow: 0 4px 12.8px rgb(3 25 38 / 25%);
+    cursor: pointer;
     font-size: 20px;
     font-weight: 700;
-    cursor: pointer;
+    box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
 }
 
-#abrir:hover {
-    background: var(--cor-destaque);
-}
-
-#painel {
-    /* min() impede que o painel ultrapasse a 
-    largura da tela r o vh representa uma porcentagem da
-     altura visível do navegador */
-    width: min(384px, calc(100vw - 32px));
-    max-height: min(75vh, 608px);
+#painel:not([hidden]) {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% + 12.8px);
+    width: min(90vw, 360px);
+    max-height: min(70vh, 520px);
     overflow-y: auto;
     padding: 20px;
-    border: 2px solid var(--cor-principal);
+    border: 1px solid var(--cor-verde-claro);
     border-radius: 16px;
-    color: var(--cor-principal);
-    background: var(--cor-fundo-cartao);
-    box-shadow: 0 12px 32px rgb(3 25 38 / 20%);
+    background: var(--cor-branco-quente);
+    box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
 }
 
 #painel[hidden] {
-    /* seleciona elementos que têm o atributo html hidden */  /* hidden é um 
-    atributo booleano que indica ao navegador
-     que aquele elemento não deve aparecer para o usuário <- pequena explicação :) */
     display: none;
 }
 
@@ -380,42 +362,34 @@ footer p {
 }
 
 #painel [role="group"] {
-    /*n sei oq escrever aqui*/
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9.6px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
-#painel [role="group"] > span {
-    /* O span  ocupa todas as colunas. */
-    grid-column: 1 / -1;
+#painel [role="group"] span {
+    flex-basis: 100%;
     font-weight: 700;
 }
 
 #painel button {
-    /* algo compartilhado por todos os botões dentro do painel */
-    min-height: 44px;
-    padding: 8.8px 12px;
-    border: 2px solid var(--cor-destaque);
+    padding: 7.2px 10.4px;
+    border: 1px solid var(--cor-azul-petroleo);
     border-radius: 8px;
-    color: var(--cor-principal);
     background: var(--cor-creme);
-    font: inherit;
-    font-weight: 600;
+    color: var(--cor-azul-marinho);
     cursor: pointer;
+    font: inherit;
 }
 
 #painel button:hover {
-    color: var(--cor-principal);
     background: var(--cor-verde-claro);
 }
 
 #painel .a11y-reset {
-    /*esta classe identifica o botão que restaura as opções padrão*/
-    width: 100%;
-    margin-top: 13.6px;
+    margin-top: 16px;
+    background: var(--cor-azul-marinho);
     color: var(--cor-creme);
-    background: var(--cor-principal);
 }
 
 /* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
@@ -427,7 +401,7 @@ footer p {
     pointer-events: none;
 }
 
-/* Efeitos aplicados no <html> pelo JS*/
+/* ===== Efeitos aplicados no <html> pelo JS ===== */
 html.alto-contraste body {
     background: #000;
     color: #fff;
@@ -480,6 +454,36 @@ html.dalt-deuteranopia {
 }
 html.dalt-tritanopia   { 
     filter: url(#filtro-tritanopia); 
+}
+
+/* ===== NOVO: leitura em voz alta ===== */
+#painel .grupo-leitura {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-verde-claro);
+}
+
+#painel .grupo-leitura label {
+    flex-basis: 100%;
+}
+
+#painel input[type="range"] {
+    vertical-align: middle;
+    width: 150px;
+}
+
+/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
+#painel button[aria-pressed="true"] {
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+}
+
+/* item que está sendo lido agora */
+.lendo-agora {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 2px;
+    background: rgb(255 191 0 / 25%) !important;
+    scroll-margin: 120px;
 }
 
 @media (max-width: 640px) {

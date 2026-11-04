@@ -77,7 +77,7 @@
                 <h3>Respeite a autonomia</h3>
                 <p>Autonomia é a capacidade de tomar decisões e agir de acordo com a própria vontade. 
                 Pergunte antes de ajudar. Cada pessoa sabe melhor do que ninguém o que precisa e como 
-                prefere ser apoiada..</p>
+                prefere ser apoiada.</p>
             </article>
 
             <article class="principio">
@@ -89,7 +89,8 @@
 
             <article class="principio">
                 <h3>Inclua a verdade</h3>
-                <p>Convide pessoas com deficiência para decisões, projetos e conversas desde o início — não apenas no final.</p>
+                <p>Convide pessoas com deficiência para decisões, projetos e conversas desde o início — 
+                    não apenas no final.</p>
             </article>
         </section>
     </main>
@@ -116,13 +117,27 @@
                 <button type="button" data-toggle="destacar-links" aria-pressed="false">Destacar links</button>
                 <button type="button" data-toggle="espacamento" aria-pressed="false">Mais espaçamento</button>
                 <button type="button" data-acao="daltonismo" aria-pressed="false">Modo daltônico: desligado</button>
-                </div>
+            </div>
+
+            <!--NOVO: Leitura em voz alta-->
+            <div class="grupo-leitura" role="group" aria-label="Leitura em voz alta">
+                <span>Leitura em voz alta</span>
+                <button type="button" data-acao="ler-pagina" aria-label="Ler a página inteira em voz alta (atalho Alt L)">▶ Ler página</button>
+                <button type="button" data-acao="ler-selecao" aria-label="Ler somente o texto selecionado">Ler seleção</button>
+                <button type="button" data-acao="pausar" aria-pressed="false" aria-label="Pausar leitura">⏸ Pausar</button>
+                <button type="button" data-acao="parar" aria-label="Parar leitura">⏹ Parar</button>
+                <button type="button" data-toggle="leitura-foco" aria-pressed="false"
+                    aria-label="Ler em voz alta o item sob o mouse ou com foco do teclado">Ler ao passar o mouse / foco</button>
+                <label for="velocidade">Velocidade:
+                    <input type="range" id="velocidade" min="0.5" max="2" step="0.25" value="1">
+                </label>
+            </div>
 
             <button type="button" class="a11y-reset" data-acao="reset" aria-live="polite">Restaurar padrão</button>
-         </section>
+        </section>
 
-         <!--Filtros para modo daltônico-->
-         <svg aria-hidden="true" focusable="false">
+        <!--Filtros para modo daltônico-->
+        <svg aria-hidden="true" focusable="false">
             <defs>
                 <filter id="filtro-protanopia">
                     <feColorMatrix type="matrix" values="

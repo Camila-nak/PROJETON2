@@ -302,6 +302,7 @@ footer p {
     margin: 0;
 }
 
+/* botão de acessibilidade */
 #acesso {
     position: fixed;
     z-index: 10;
@@ -317,7 +318,6 @@ footer p {
     background: var(--cor-azul-petroleo);
     color: var(--cor-creme);
     cursor: pointer;
-    font: inherit;
     font-size: 20px;
     font-weight: 700;
     box-shadow: 0 5px 18px rgb(3 25 38 / 25%);
@@ -333,7 +333,7 @@ footer p {
     padding: 20px;
     border: 1px solid var(--cor-verde-claro);
     border-radius: 16px;
-    background: var(--cor-fundo-cartao);
+    background: var(--cor-branco-quente);
     box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
 }
 
@@ -440,14 +440,34 @@ html.dalt-tritanopia   {
     filter: url(#filtro-tritanopia); 
 }
 
-@media (max-width: 760px) {
-    .navegacao-principal ul {
-        justify-content: center;
-    }
+/* ===== NOVO: leitura em voz alta ===== */
+#painel .grupo-leitura {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--cor-verde-claro);
+}
 
-    footer {
-        grid-template-columns: 1fr;
-    }
+#painel .grupo-leitura label {
+    flex-basis: 100%;
+}
+
+#painel input[type="range"] {
+    vertical-align: middle;
+    width: 150px;
+}
+
+/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
+#painel button[aria-pressed="true"] {
+    background: var(--cor-azul-petroleo);
+    color: var(--cor-creme);
+}
+
+/* item que está sendo lido agora */
+.lendo-agora {
+    outline: 3px solid #ffbf00 !important;
+    outline-offset: 2px;
+    background: rgb(255 191 0 / 25%) !important;
+    scroll-margin: 120px;
 }
 
 @media (max-width: 420px) {
