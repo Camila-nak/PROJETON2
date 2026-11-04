@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/impacto.css">
-    <title>Impactos - PCDireitos</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <title>Home - PCDireitos</title>
 </head>
+
 <body>
 
-        <!--Cabeçalho-->
+    <!--Cabeçalho-->
     <header>
-        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <img src="../imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
         <h1>PCDireitos</h1>
         <p class="marca-descricao">Pessoas com direitos</p>
 
@@ -38,69 +39,61 @@
         </nav> 
     </header>
 
-    <!-- Conteúdo principal -->
+    <!--corpo do site-->
     <main>
-        <section>
-            <p>Dados e resultados</p>
-            <h1>Impacto</h1>
-            <p>Resultados dos nossos projetos em números. Os valores dos projetos são fictícios, para fins acadêmicos.</p>
+        <section class="destaque">
+            <p class="destaque-chamada">Informação que transforma</p>
+            <h1>Toda pessoa cabe no futuro</h1>
+
+            <p>Conhecimento, respeito e ação para construir uma sociedade onde 
+                pessoas com deficiência tenham voz, autonomia e oportunidades reais.</p>
         </section>
 
-        <section>
-            <h2>Resultados por projeto</h2>
-
-            <div>
-
-                <!--Tabela de resultados-->
-                <table>
-                    <!--caption é o título da tabela, thead é o cabeçalho, tbody é o corpo da tabela e tfoot é o rodapé da tabela-->
-                    <caption>Pessoas atendidas e resultados por projeto (2023–2025)</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Projeto</th>
-                            <th scope="col">Pessoas atendidas</th>
-                            <th scope="col">Oficinas / ações</th>
-                            <th scope="col">Resíduos reaproveitados (kg)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><th scope="row">Horta Acessível</th><td>320</td><td>24</td><td>1.200</td></tr>
-                        <tr><th scope="row">Oficinas de Reciclagem Inclusiva</th><td>540</td><td>58</td><td>4.800</td></tr>
-                        <tr><th scope="row">Escola Sem Barreiras</th><td>1.150</td><td>36</td><td>0</td></tr>
-                    </tbody>
-                    <tfoot>
-                        <tr><th scope="row">Total</th><td>2.010</td><td>118</td><td>6.000</td></tr>
-                    </tfoot>
-                </table>
-            </div>
+        <!--estatisticas-->
+        <section class="estatisticas" aria-label="Dados sobre pessoas com deficiência">
+            <article class="estatistica">
+                <strong>14,4</strong>
+                <p>Milhões de brasileiros são PCDs segundo o Censo 2022</p>
+            </article>
+            <article class="estatistica">
+                <strong>7,3%</strong>
+                <p>brasileiros têm algum tipo de deficiência segundo o Censo 2022</p>
+            </article>
+            <article class="estatistica">
+                <strong>100%</strong>
+                <p>Das pessoas merecem respeito, dignidade e acesso a oportunidades</p>
+            </article>
         </section>
 
-        <section>
-            <h2>Dados nacionais de referência</h2>
-            <div >
-                <table>
-                    <caption>Pessoas com deficiência no Brasil</caption>
+        <section class="conceito">
+            <h2>Deficiência não define ninguém</h2>
 
-                    <thead>
-                        <tr>
-                            <th scope="col">Indicador</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Fonte</th>
-                        </tr>
-                    </thead>
+            <p>Pessoa com deficiência (PCD) é aquela que possui impedimentos de longo prazo que, em interação com barreiras, podem limitar 
+                sua participação plena na sociedade. O foco deve estar na remoção dessas barreiras — não na pessoa.</p>
+        </section>
 
-                    <tbody>
-                        <tr><td>Brasileiros com alguma deficiência</td><td>14,4 milhões</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Percentual da população com 2 anos ou mais</td><td>7,3%</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Mulheres</td><td>8,3 Milhões</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Homens</td><td>6,1 Milhões</td><td>Censo 2022 do IBGE</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <section class="principios" aria-label="Princípios de inclusão">
+            <article class="principio">
+                <h3>Respeite a autonomia</h3>
+                <p>Autonomia é a capacidade de tomar decisões e agir de acordo com a própria vontade. 
+                Pergunte antes de ajudar. Cada pessoa sabe melhor do que ninguém o que precisa e como 
+                prefere ser apoiada..</p>
+            </article>
+
+            <article class="principio">
+                <h3>Remova barreiras</h3>
+                <p>Barreiras são obstáculos que dificultam ou impedem a participação plena das pessoas 
+                    com deficiência na sociedade. Acessibilidade também é comunicação clara, 
+                    atitudes sem preconceito e ambientes pensados para todos.</p>
+            </article>
+
+            <article class="principio">
+                <h3>Inclua a verdade</h3>
+                <p>Convide pessoas com deficiência para decisões, projetos e conversas desde o início — não apenas no final.</p>
+            </article>
         </section>
     </main>
 
-    <!--Painel acessibilidade-->
     <!--Painel acessibilidade-->
     <div id="acesso">
         <button id="abrir" type="button" aria-expanded="false" aria-controls="painel"
@@ -159,10 +152,11 @@
     <!--rodapé-->
     <footer>
         <section>
-            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <img src="../imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
             <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
         </section>
 
+        <!--navegação no rodapé-->
         <section>
             <h3>Navegue</h3>
             <ul>
@@ -179,7 +173,8 @@
             </ul>
         </section>
     </footer>
-    
-    <script src="js/painel.js"></script>
+
+    <script src="../js/painel.js"></script>
 </body>
+
 </html>

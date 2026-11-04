@@ -56,7 +56,7 @@ header {
     background: var(--cor-azul-marinho);
 }
 
-header > img[src="imgs/logo_PCDireitos.jpg"] {
+header > img[src="../imgs/logo_PCDireitos.jpg"] {
     grid-row: span 3;   /* logo ocupa as 3 linhas */
     width: 140px;
     height: auto;
