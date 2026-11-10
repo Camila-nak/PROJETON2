@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/acessibilidade.css">
-    <title>Acessibilidade - PCDireitos</title>
+    <link rel="stylesheet" href="../css/quiz.css">
+    <title>Quiz - PCDireitos</title>
 </head>
 <body>
 
         <!--Cabeçalho-->
     <header>
-        <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+        <img src="../imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
         <h1>PCDireitos</h1>
         <p class="marca-descricao">Pessoas com direitos</p>
 
-        <!--Navegação do cabeçalho-->
+        <!--Navegação do cabeçalho -->
         <nav class="navegacao-principal" aria-label="Navegação principal">
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -26,7 +26,7 @@
                     <details>
                         <summary>Saiba mais</summary>
                         <ul>
-                            <li><a href="galeria.html">Galeria</a></li>
+                            <li><a href="quiz.html">Quiz</a></li>
                             <li><a href="midia.html">Mídia</a></li>
                             <li><a href="noticia.html">Notícias</a></li>
                             <li><a href="contato.html">Contato</a></li>
@@ -38,49 +38,23 @@
         </nav> 
     </header>
 
+    <!-- Conteúdo principal -->
     <main>
         <section>
-            <p>Inclusão na prática</p>
-            <p>Medida que adotamos nesse site para garantir a acessibilidade</p>
+            <p id="count"></p>
+            <h1 id="question"></h1>
+            <div id="options"></div>
+            <p id="feedback"></p>
+            <button id="next" hidden>Próxima pergunta</button>
         </section>
 
-        <section>
-            <h2>O que fazemos nesse site?</h2>
-            <p>Para garantir a máxima acessibilidade, o botão "A+" foi posicionado em um local de destaque e fácil alcance: 
-                o canto inferior direito da janela do navegador. Essa localização é um padrão comum em muitas interfaces,
-                tornando-o intuitivo de encontrar para usuários que já estão acostumados com esse tipo de ferramenta de acessibilidade.</p>
-
-            <ul>
-                <li>Textos alternativos (<code>alt</code>) em todas as imagens.</li>
-                <li>Estrutura de títulos organizada, para leitores de tela.</li>
-                <li>Links com texto claro, sem "clique aqui".</li>
-                <li>Formulários com rótulos associados a cada campo.</li>
-                <li>Tabelas com legenda e cabeçalhos identificados.</li>
-                <li>Botão de acessibilidade para aumentar o texto e ativar alto contraste.</li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Medidas de inclusão por tipo de deficiência</h2>
-            <article>
-                <h3>Deficiência visual</h3>
-                <p>Descrição de imagens, bom contraste e compatibilidade com leitores de tela.</p>
-            </article>
-            <article>
-                <h3>Deficiência auditiva</h3>
-                <p>Legendas e transcrições.</p>
-            </article>
-            <article>
-                <h3>Deficiência física</h3>
-                <p>Navegação possível apenas pelo teclado e áreas de clique amplas.</p>
-            </article>
-            <article>
-                <h3>Deficiência intelectual</h3>
-                <p>Linguagem simples, frases curtas e organização previsível.</p>
-            </article>
+        <!-- Tela do resultado (começa escondida) -->
+        <section id="result" hidden>
+            <h1 id="score"></h1>
+            <p id="message"></p>
+            <button id="restart">Jogar de novo</button>
         </section>
     </main>
-
 
     <!--Painel acessibilidade-->
     <div id="acesso">
@@ -136,16 +110,14 @@
             </defs>
         </svg>
     </div>
-
+    
     <!--rodapé-->
     <footer>
         <section>
-            <img src="imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
+            <img src="../imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
             <p>Informações para uma sociedade com mais acesso, participação e autonomia</p>
-
         </section>
 
-        <!--navegação no rodapé-->
         <section>
             <h3>Navegue</h3>
             <ul>
@@ -154,15 +126,15 @@
                 <li><a href="projetos.html">Projetos</a></li>
                 <li><a href="impacto.html">Impacto</a></li>
                 <li><a href="acessibilidade.html">Acessibilidade</a></li>
-                <li><a href="galeria.html">Galeria</a></li>
-                <li><a href="midia.html">Mídia</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
                 <li><a href="noticia.html">Notícias</a></li>
                 <li><a href="contato.html">Contato</a></li>
                 <li><a href="orcamento_hospedagem.html">Orçamento de hospedagem</a></li>
             </ul>
         </section>
     </footer>
-    
-    <script src="js/painel.js"></script>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/painel.js"></script>
 </body>
 </html>
