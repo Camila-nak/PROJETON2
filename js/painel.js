@@ -284,9 +284,7 @@
     if (g) g.hidden = true;
   }
 
-  /* =====================================================
-     CÓDIGO ORIGINAL DO PAINEL
-     ===================================================== */
+  /* CÓDIGO ORIGINAL DO PAINEL*/
   function aplicar() {
     html.style.fontSize = estado.fonte + '%';
 
