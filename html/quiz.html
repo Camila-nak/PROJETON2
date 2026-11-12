@@ -40,11 +40,11 @@
 
     <!-- Conteúdo principal -->
     <main>
-        <section>
+        <section id="quiz" aria-labelledby="question">
             <p id="count"></p>
             <h1 id="question"></h1>
             <div id="options"></div>
-            <p id="feedback"></p>
+            <p id="feedback" role="status" aria-live="polite"></p>
             <button id="next" hidden>Próxima pergunta</button>
         </section>
 
