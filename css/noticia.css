@@ -14,6 +14,9 @@
     --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
     --cor-fundo-cartao: #fffdf7; /* artões e painel */
     --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+    --cor-azul-marinho: var(--cor-principal);
+    --cor-azul-petroleo: var(--cor-destaque);
+    --cor-branco-quente: var(--cor-fundo-cartao);
 }
 
 /* bordas e preenchimentos no cálculo da largura */
