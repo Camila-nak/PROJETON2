@@ -331,7 +331,7 @@ footer p {
     height: 56px;
     border: 2px solid var(--cor-creme);
     border-radius: 50%;
-    background: var(--cor-azul-petroleo);
+    background: var(--cor-destaque);
     color: var(--cor-creme);
     cursor: pointer;
     font-size: 20px;
@@ -349,7 +349,7 @@ footer p {
     padding: 20px;
     border: 1px solid var(--cor-verde-claro);
     border-radius: 16px;
-    background: var(--cor-branco-quente);
+    background: var(--cor-fundo-cartao);
     box-shadow: 0 12px 36px rgb(3 25 38 / 20%);
 }
 
@@ -388,7 +388,7 @@ footer p {
 
 #painel .a11y-reset {
     margin-top: 16px;
-    background: var(--cor-azul-marinho);
+    background: var(--cor-principal);
     color: var(--cor-creme);
 }
 
