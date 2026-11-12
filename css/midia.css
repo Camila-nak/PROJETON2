@@ -14,10 +14,12 @@
     --cor-creme: #f4e9cd; 
     --cor-fundo-cartao: #fffdf7;
     --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); 
+    --cor-azul-marinho: var(--cor-principal);
+    --cor-azul-petroleo: var(--cor-destaque);
+    --cor-branco-quente: var(--cor-fundo-cartao);
 }
 
-/* bordas e preenchimentos no cálculo da largura */
-* {
+ {
     box-sizing: border-box;
 }
 
@@ -31,7 +33,7 @@ a {
     text-underline-offset: 3.2px; /* separa o sublinhado das letras */
 }
 
-/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
+/*  aplica o estilo quando o mouse tá no link */
 a:hover {
     color: var(--cor-destaque);
 }
@@ -479,7 +481,6 @@ main > section:nth-of-type(4) article p {
 
 
 body > footer {
-    /* auto-fit adapta a quantidade à largura */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
     gap: 32px;
@@ -508,7 +509,6 @@ body > footer ul {
 }
 
 body > footer {
-    /* auto-fit adapta a quantidade à largura */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 288px), 1fr));
     gap: 32px;
@@ -625,7 +625,6 @@ body > footer p {
     color: var(--cor-creme);
 }
 
-/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
 #acesso svg {
     position: absolute;
     width: 0;
@@ -703,13 +702,11 @@ html.dalt-tritanopia   {
     width: 150px;
 }
 
-/* botões ligados (ex.: "Ler ao passar o mouse") ficam destacados */
 #painel button[aria-pressed="true"] {
     background: var(--cor-azul-petroleo);
     color: var(--cor-creme);
 }
 
-/* item que está sendo lido agora */
 .lendo-agora {
     outline: 3px solid #ffbf00 !important;
     outline-offset: 2px;
