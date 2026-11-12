@@ -391,6 +391,7 @@ main > section:nth-of-type(5) li p {
     margin: 0;
 }
 
+/* descrição do site e o contato aka rodapé :p */
 footer {
     /* auto-fit adapta a quantidade à largura */
     display: grid;
@@ -398,7 +399,7 @@ footer {
     gap: 32px;
     padding: 32px max(20px, calc((100% - 1152px) / 2));
     color: var(--cor-creme);
-    background: var(--cor-principal);
+    background: var(--cor-azul-marinho);
 }
 
 footer h3 {
@@ -420,11 +421,14 @@ footer ul {
     padding-left: 20px;
 }
 
+
 /*Parte da logo no rodapé*/
 footer img {
-    display: block;    
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
+    height: auto;
     margin-bottom: 12px;
-    margin-left: -12px;   
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
     border-radius: 12px;
 }
 
@@ -432,7 +436,6 @@ footer p {
     max-width: 32ch;
     margin: 0;
 }
-
 /* botão de acessibilidade */
 #acesso {
     position: fixed;
