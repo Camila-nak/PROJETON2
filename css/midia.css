@@ -7,13 +7,13 @@
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     line-height: 1.6;
-    --cor-principal: #031926; /*títulos, cabeçalho e rodapé */
-    --cor-destaque: #468189; /* botões e detalhes */
-    --cor-verde-agua: #77aca4; /* foco do teclado*/
-    --cor-verde-claro: #9ebebd; /* textos e fundos mais leves/suaves */
-    --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
-    --cor-fundo-cartao: #fffdf7; /* artões e painel */
-    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+    --cor-principal: #031926; 
+    --cor-destaque: #468189; 
+    --cor-verde-agua: #77aca4;
+    --cor-verde-claro: #9ebebd; 
+    --cor-creme: #f4e9cd; 
+    --cor-fundo-cartao: #fffdf7;
+    --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); 
 }
 
 /* bordas e preenchimentos no cálculo da largura */
@@ -43,8 +43,6 @@ a:hover {
 }
 
 header {
-       /*Espaço interno do cabeçalho: 20px em cima e embaixo, e nas laterais um valor que 
-       acompanha a tela (3% da largura), nunca menor que 20px nem maior que 48px.*/
     padding: 20px clamp(20px, 3vw, 48px); 
     color: var(--cor-creme);
     background: var(--cor-principal);
@@ -55,7 +53,7 @@ header {
 }
 
 header > img[src="../imgs/logo_PCDireitos.jpg"] {
-    grid-row: span 3;   /* logo ocupa as 3 linhas */
+    grid-row: span 3;
     width: 140px;
     height: auto;
     border-radius: 12px;
@@ -63,20 +61,16 @@ header > img[src="../imgs/logo_PCDireitos.jpg"] {
 
 header h1 {
     margin: 0;
-    font-size: clamp(28px, 4vw, 36px); /* Tamanho que se adapta a tela */
+    font-size: clamp(28px, 4vw, 36px); 
     line-height: 1.2;
 }
 
 .marca-descricao {
-    /* O ponto '.' seleciona uma classe do html onde identifica a frase */
     margin: 3.2px 0 16px;
     color: var(--cor-verde-claro);
 }
 
 .navegacao-principal ul {
-    /* "navegacao-principal" é onde ficam os links principais e a ul seleciona
-       a lista de links que está dentro dela */
-    /*  o flex vai organizar os itens em linha e o flex-wrap vai quebrar em outra linha quando não houver espaço*/
     display: flex;
     flex-wrap: wrap;
     gap: 5.6px 20px;
@@ -271,14 +265,14 @@ main > section:nth-of-type(3) blockquote footer {
 
 main > section:nth-of-type(4) {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: center;
-    gap: 12px 24px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
 }
 
 main > section:nth-of-type(4) > p:first-child,
 main > section:nth-of-type(4) > h2 {
-    grid-column: 1;
+    grid-column: 1 / -1;
 }
 
 main > section:nth-of-type(4) > h2 {
@@ -286,21 +280,147 @@ main > section:nth-of-type(4) > h2 {
 }
 
 main > section:nth-of-type(4) article {
-    grid-column: 2;
-    grid-row: 1 / 3;
     padding: 24px;
-    border-left: 4px solid var(--cor-destaque);
-    border-radius: 0 12px 12px 0;
-    background: rgb(158 190 189 / 30%);
+    border: 1px solid rgb(3 25 38 / 10%);
+    border-top: 4px solid var(--cor-destaque);
+    border-radius: 12px;
+    background: rgb(158 190 189 / 24%);
 }
 
 main > section:nth-of-type(4) article h3 {
-    margin: 0 0 8px;
+    margin: 0 0 10px;
     font-size: 21px;
+    line-height: 1.3;
 }
 
 main > section:nth-of-type(4) article p {
     margin: 0;
+}
+
+.podcast {
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 100% 0, rgb(119 172 164 / 22%), transparent 48%),
+        var(--cor-fundo-cartao);
+}
+
+.podcast > p:first-child {
+    margin: 0 0 10px;
+    color: var(--cor-destaque);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.podcast > h2 {
+    margin-bottom: 12px;
+}
+
+.podcast > p:nth-of-type(2) {
+    max-width: 680px;
+    margin: 0 0 28px;
+}
+
+.episodio {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1.3fr);
+    gap: clamp(24px, 5vw, 56px);
+    align-items: center;
+    padding: clamp(20px, 4vw, 40px);
+    border: 1px solid rgb(3 25 38 / 10%);
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: var(--sombra-cartao);
+}
+
+.episodio-capa {
+    display: grid;
+    align-content: end;
+    gap: 8px;
+    min-height: 240px;
+    padding: 24px;
+    border-radius: 14px;
+    background:
+        radial-gradient(circle at 75% 25%, rgb(244 233 205 / 60%) 0 8%, transparent 8.5%),
+        linear-gradient(145deg, var(--cor-destaque), var(--cor-principal) 75%);
+    color: var(--cor-creme);
+}
+
+.episodio-capa span:first-child {
+    color: var(--cor-verde-claro);
+    font-size: clamp(48px, 7vw, 76px);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.episodio-capa span:last-child {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.5;
+}
+
+.episodio-numero {
+    margin: 0 0 8px;
+    color: var(--cor-destaque);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.episodio-conteudo h3 {
+    margin: 0 0 10px;
+    font-size: clamp(22px, 3vw, 30px);
+    line-height: 1.2;
+}
+
+.episodio-conteudo > p:not(.episodio-numero) {
+    margin: 0 0 20px;
+}
+
+.audio-indisponivel {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 20px;
+    padding: 14px 18px;
+    border: 1px solid rgb(70 129 137 / 24%);
+    border-radius: 12px;
+    background: rgb(158 190 189 / 25%);
+}
+
+.audio-indisponivel > span {
+    display: grid;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+    font-size: 22px;
+}
+
+.audio-indisponivel p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.episodio-conteudo details {
+    border-top: 1px solid rgb(3 25 38 / 12%);
+    padding-top: 14px;
+}
+
+.episodio-conteudo summary {
+    color: var(--cor-destaque);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.episodio-conteudo details p {
+    margin: 10px 0 0;
 }
 
 @media (max-width: 680px) {
@@ -323,18 +443,25 @@ main > section:nth-of-type(4) article p {
     main > section:nth-of-type(3) > p:nth-of-type(2),
     main > section:nth-of-type(3) blockquote,
     main > section:nth-of-type(4) > p:first-child,
-    main > section:nth-of-type(4) > h2,
-    main > section:nth-of-type(4) article {
+    main > section:nth-of-type(4) > h2 {
         grid-column: 1;
         grid-row: auto;
+    }
+
+    main > section:nth-of-type(4) > h2 {
+        margin-top: 0;
     }
 
     main > section:nth-of-type(3) blockquote {
         margin-top: 12px;
     }
 
-    main > section:nth-of-type(4) article {
-        margin-top: 8px;
+    .episodio {
+        grid-template-columns: 1fr;
+    }
+
+    .episodio-capa {
+        min-height: 180px;
     }
 }
 
@@ -415,7 +542,7 @@ body > footer img {
     width: 140px;  
     height: auto;
     margin-bottom: 12px;
-    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    margin-left: -12px;  
     border-radius: 12px;
 }
 
@@ -507,7 +634,6 @@ body > footer p {
     pointer-events: none;
 }
 
-/* ===== Efeitos aplicados no <html> pelo JS ===== */
 html.alto-contraste body {
     background: #000;
     color: #fff;
@@ -562,7 +688,6 @@ html.dalt-tritanopia   {
     filter: url(#filtro-tritanopia); 
 }
 
-/* ===== NOVO: leitura em voz alta ===== */
 #painel .grupo-leitura {
     margin-top: 16px;
     padding-top: 12px;
