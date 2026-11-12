@@ -253,7 +253,7 @@ main {
     font-size: 18px;
 }
 
-/* parte de baixo (rodapé) */
+/* descrição do site e o contato aka rodapé :p */
 footer {
     /* auto-fit adapta a quantidade à largura */
     display: grid;
@@ -283,12 +283,14 @@ footer ul {
     padding-left: 20px;
 }
 
+
 /*Parte da logo no rodapé*/
 footer img {
-    display: block;    
+    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
+    width: 140px;       /* ajusta o tamanho aqui */
     height: auto;
     margin-bottom: 12px;
-    margin-left: -12px;  
+    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
     border-radius: 12px;
 }
 
