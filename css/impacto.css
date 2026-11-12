@@ -130,105 +130,632 @@ header h1 {
     position: relative;
 }
 
+/*main*/
 main {
-    padding: 0 20px 48px;
+    /* apelidos feitos a partir do SEU :root (nada de cor nova) */
+    --m-linha: color-mix(in srgb, var(--cor-azul-marinho) 18%, transparent);
+    --m-linha-suave: color-mix(in srgb, var(--cor-azul-marinho) 10%, transparent);
+    --m-texto-suave: color-mix(in srgb, var(--cor-azul-marinho) 78%, var(--cor-creme));
+    --m-acento-texto: color-mix(in srgb, var(--cor-azul-petroleo) 75%, var(--cor-azul-marinho));
+    --m-chip: color-mix(in srgb, var(--cor-verde-claro) 35%, var(--cor-branco-quente));
+    --m-faixa: color-mix(in srgb, var(--cor-verde-claro) 30%, var(--cor-creme));
+ 
+    /* margem lateral: conteúdo centralizado, respeitando --largura-maxima-conteudo */
+    --m-gutter: max(20px, calc((100% - var(--largura-maxima-conteudo)) / 2));
+ 
+    /* ícone de pin (usado como máscara) */
+    --m-icone-pino: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 21s-7-6.2-7-11a7 7 0 1 1 14 0c0 4.8-7 11-7 11z'/%3E%3Ccircle cx='12' cy='10' r='2.5'/%3E%3C/svg%3E");
+ 
+    position: relative;
+    overflow: clip; /* "clip" corta as bolhas sem quebrar o position: sticky */
+    padding: 0;
+    color: var(--cor-principal);
 }
-
+ 
+main button {
+    font-family: inherit;
+}
+ 
+/* bolhas decorativas do fundo */
+main::before,
+main::after {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+ 
+main::before {
+    top: -210px;
+    left: -150px;
+    width: 500px;
+    height: 500px;
+    background: color-mix(in srgb, var(--cor-verde-claro) 40%, transparent);
+}
+ 
+main::after {
+    top: 450px;
+    right: -180px;
+    width: 660px;
+    height: 660px;
+    background: color-mix(in srgb, var(--cor-verde-agua) 28%, transparent);
+}
+ 
 main > section {
-    width: min(100%, 1152px);
-    margin-inline: auto;
+    position: relative;
+    z-index: 1;
 }
-
-main > section:first-of-type {
-    padding-block: clamp(56px, 9vw, 104px);
-    text-align: center;
-}
-
-main > section:first-of-type > p:first-child {
-    margin: 0 0 9.6px;
-    color: var(--cor-azul-petroleo);
-    font-size: 14.4px;
+ 
+/* ---------- texto pequeno com bolinha (hero e "Descubra por perto") ---------- */
+main > section:first-of-type > p:first-child,
+main #locais > header > p:first-child {
+    display: inline-flex;
+    align-items: center;
+    justify-self: start;
+    gap: 12px;
+    margin: 0;
+    color: var(--cor-azul-marinho);
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 1.92px;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
 }
-
+ 
+main > section:first-of-type > p:first-child::before,
+main #locais > header > p:first-child::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--cor-azul-petroleo);
+}
+ 
+/* =========================================================
+   HERO
+   ========================================================= */
+main > section:first-of-type {
+    padding: clamp(72px, 10vw, 128px) var(--m-gutter) clamp(72px, 9vw, 112px);
+    text-align: center;
+    background-image:
+        linear-gradient(var(--m-linha-suave) 1px, transparent 1px),
+        linear-gradient(90deg, var(--m-linha-suave) 1px, transparent 1px);
+    background-size: 64px 64px;
+}
+ 
+main > section:first-of-type > p:first-child {
+    margin-bottom: 28px;
+}
+ 
 main > section:first-of-type h1 {
-    margin: 0 0 12px;
-    font-size: clamp(40px, 7vw, 72px);
-    line-height: 1.1;
+    max-width: 8.6em;
+    margin: 0 auto 32px;
+    color: var(--cor-azul-marinho);
+    font-size: clamp(44px, 7.4vw, 92px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
 }
-
-main > section:first-of-type > p:last-child {
-    max-width: 736px;
+ 
+/* "acolhem você." em itálico com o traço verde-água embaixo */
+main > section:first-of-type h1 em {
+    position: relative;
+    display: inline-block;
+    isolation: isolate;
+    color: var(--cor-azul-petroleo);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+ 
+main > section:first-of-type h1 em::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0.04em;
+    left: 0;
+    height: 0.14em;
+    border-radius: 999px;
+    background: var(--cor-verde-agua);
+}
+ 
+main > section:first-of-type h1 + p {
+    max-width: 37em;
     margin: 0 auto;
-    font-size: clamp(16px, 2vw, 19.2px);
+    color: var(--m-texto-suave);
+    font-size: clamp(18px, 2vw, 22px);
+    line-height: 1.65;
 }
-
-main > section:nth-of-type(n + 2) {
-    margin-bottom: 32px;
-    padding: clamp(16px, 3vw, 32px);
-    border-radius: 16px;
+ 
+/* "Informações verificadas / São Paulo e região / +120 locais mapeados" */
+main > section:first-of-type > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 32px;
+    margin: 44px 0 0;
+    padding: 0;
+    list-style: none;
+    color: var(--m-texto-suave);
+    font-size: 17px;
+}
+ 
+main > section:first-of-type > ul li:first-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+ 
+main > section:first-of-type > ul li:first-child::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        var(--cor-azul-petroleo) 0 5px,
+        color-mix(in srgb, var(--cor-verde-agua) 35%, transparent) 5.5px
+    );
+}
+ 
+/* =========================================================
+   FILTROS (fica fixo no topo ao rolar)
+   ========================================================= */
+main > nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    border-bottom: 1px solid var(--m-linha);
+    background: color-mix(in srgb, var(--cor-creme) 92%, transparent);
+    backdrop-filter: blur(10px);
+}
+ 
+main > nav ul {
+    display: flex;
+    gap: 12px;
+    margin: 0;
+    padding: 18px var(--m-gutter);
+    list-style: none;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+ 
+main > nav li {
+    flex: none;
+}
+ 
+main > nav button {
+    padding: 14px 26px;
+    border: 1px solid var(--m-linha);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--cor-azul-marinho);
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+ 
+main > nav button:hover {
+    border-color: var(--cor-azul-marinho);
+}
+ 
+main > nav button[aria-pressed="true"] {
+    border-color: var(--cor-principal);
+    background: var(--cor-principal);
+    color: var(--cor-creme);
+}
+ 
+/* etiqueta "Novo" */
+main > nav button strong {
+    margin-left: 8px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: var(--cor-verde-agua);
+    color: var(--cor-azul-marinho);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+ 
+/* =========================================================
+   LOCAIS EM DESTAQUE
+   ========================================================= */
+main #locais {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    gap: 24px;
+    align-items: start;
+    padding: clamp(56px, 8vw, 96px) var(--m-gutter);
+}
+ 
+/* cabeçalho da seção (o "header" global do site é azul, por isso este reset) */
+main #locais > header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-column: 1 / -1;
+    column-gap: 24px;
+    align-items: end;
+    margin-bottom: 16px;
+    padding: 0;
+    color: inherit;
+    background: none;
+}
+ 
+main #locais > header h2 {
+    grid-column: 1;
+    max-width: 10.5em;
+    margin: 12px 0 0;
+    font-size: clamp(36px, 5.2vw, 64px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+}
+ 
+/* "5 locais encontrados" */
+main #locais > header > p:last-child {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    display: grid;
+    grid-template-columns: auto min-content;
+    align-items: center;
+    column-gap: 14px;
+    margin: 0;
+    color: var(--m-texto-suave);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+ 
+main #locais > header > p:last-child strong {
+    color: var(--cor-azul-marinho);
+    font-size: 44px;
+    font-weight: 700;
+    letter-spacing: normal;
+    line-height: 1;
+}
+ 
+/* ---------- mapa (fica parado enquanto os cards rolam) ---------- */
+main aside {
+    position: sticky;
+    top: 108px;
+    display: flex;
+    flex-direction: column;
+    height: min(680px, calc(100vh - 140px));
+    min-height: 460px;
+    overflow: hidden;
+    border: 1px solid var(--m-linha);
+    border-radius: 28px;
     background: var(--cor-fundo-cartao);
     box-shadow: var(--sombra-cartao);
 }
-
-main > section:nth-of-type(n + 2) h2 {
-    margin: 0 0 20px;
-    font-size: clamp(22.4px, 3vw, 32px);
-    line-height: 1.25;
-}
-
-main > section:nth-of-type(n + 2) > div {
-    overflow-x: auto;
-    border-radius: 10.4px;
-    scrollbar-color: var(--cor-azul-petroleo) var(--cor-creme);
-}
-
-table {
-    width: 100%;
-    min-width: 608px;
-    border-collapse: collapse;
-    text-align: left;
-}
-
-caption {
-    padding: 0 0 13.6px;
+ 
+main aside > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 26px;
     color: var(--cor-azul-marinho);
+    background: var(--cor-fundo-cartao);
+}
+ 
+main aside > header p {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    font-size: 17px;
     font-weight: 700;
-    text-align: left;
 }
-
-th,
-td {
-    padding: 13.6px 16px;
-    border-bottom: 1px solid rgb(3 25 38 / 12%);
+ 
+main aside > header p::before,
+main article address::before,
+main article > div > p:nth-of-type(2)::before {
+    content: "";
+    flex: none;
+    width: 20px;
+    height: 20px;
+    background: currentColor;
+    -webkit-mask: var(--m-icone-pino) center / contain no-repeat;
+    mask: var(--m-icone-pino) center / contain no-repeat;
 }
-
-thead th {
+ 
+main aside > header button {
+    padding: 0 0 2px;
+    border: 0;
+    border-bottom: 2px solid currentColor;
+    background: none;
+    color: var(--m-texto-suave);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+}
+ 
+main aside > header button:hover {
+    color: var(--cor-azul-petroleo);
+}
+ 
+/* mapa desenhado só com CSS (troque pelo mapa de verdade depois) */
+main #mapa {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 380px;
+    background-color: color-mix(in srgb, var(--cor-verde-claro) 35%, var(--cor-creme));
+    background-image:
+        repeating-linear-gradient(115deg, transparent 0 58px, color-mix(in srgb, var(--cor-branco-quente) 85%, transparent) 58px 64px),
+        repeating-linear-gradient(25deg, transparent 0 96px, color-mix(in srgb, var(--cor-branco-quente) 85%, transparent) 96px 101px),
+        radial-gradient(circle at 135% 70%, transparent 0 52%, color-mix(in srgb, var(--cor-azul-petroleo) 45%, var(--cor-creme)) 52.5% 57%, transparent 57.5%),
+        radial-gradient(ellipse at 15% 22%, color-mix(in srgb, var(--cor-verde-agua) 45%, var(--cor-creme)) 0 13%, transparent 13.5%);
+}
+ 
+main #mapa ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+/* cada item da lista vira um pin; o texto fica escondido (font-size: 0)
+   e só aparece como balão no primeiro pin e ao passar o mouse */
+main #mapa li {
+    --c: var(--cor-azul-marinho);
+    position: absolute;
+    font-size: 0;
+    line-height: 0;
+    filter: drop-shadow(0 6px 6px rgb(3 25 38 / 25%));
+}
+ 
+main #mapa li::before {
+    content: "";
+    position: absolute;
+    top: -44px;
+    left: calc(50% - 18px);
+    width: 36px;
+    height: 36px;
+    border: 3px solid var(--cor-branco-quente);
+    border-radius: 50% 50% 50% 0;
+    background: radial-gradient(circle, var(--cor-branco-quente) 0 4px, var(--c) 4.5px);
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+ 
+main #mapa li:first-child,
+main #mapa li:hover {
+    --c: var(--cor-azul-petroleo);
+    z-index: 2;
+    height: 40px;
+    padding-inline: 18px;
+    border-radius: 12px;
+    color: var(--cor-creme);
     background: var(--cor-azul-marinho);
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 40px;
+    white-space: nowrap;
+    transform: translate(-50%, -92px);
+}
+ 
+main #mapa li:first-child::before,
+main #mapa li:hover::before {
+    top: calc(100% + 8px);
+}
+ 
+/* posição de cada pin no mapa */
+main #mapa li:nth-child(1) { top: 58%; left: 30%; }
+main #mapa li:nth-child(2) { top: 34%; left: 14%; }
+main #mapa li:nth-child(3) { top: 36%; left: 70%; }
+main #mapa li:nth-child(4) { top: 62%; left: 56%; }
+main #mapa li:nth-child(5) { top: 84%; left: 38%; }
+ 
+main #locais > ul {
+    display: grid;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+main article {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    min-height: 350px;
+    overflow: hidden;
+    border: 1px solid var(--m-linha);
+    border-radius: 28px;
+    background: var(--cor-fundo-cartao);
+    box-shadow: var(--sombra-cartao);
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+ 
+main article:hover,
+main article:focus-within {
+    box-shadow: 0 16px 36px rgb(3 25 38 / 14%);
+    transform: translateY(-2px);
+}
+ 
+main figure {
+    position: relative;
+    margin: 0;
+}
+ 
+main figure img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+ 
+main figcaption {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--cor-azul-marinho) 92%, transparent);
+    color: var(--cor-creme);
+    font-size: 14px;
+    font-weight: 700;
+}
+ 
+main article > div {
+    position: relative;
+    padding: 28px 28px 28px 32px;
+}
+ 
+/* categoria (MUSEUS, PARQUES...) */
+main article > div > p:first-child {
+    margin: 0;
+    color: var(--m-acento-texto);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+ 
+main article h3 {
+    margin: 6px 0 14px;
+    padding-right: 64px; /* espaço para o botão de seta */
+    color: var(--cor-azul-marinho);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+ 
+/* endereço (ou local e horário, no evento) */
+main article address,
+main article > div > p:nth-of-type(2) {
+    position: relative;
+    margin: 0;
+    padding: 0 0 20px 30px;
+    border-bottom: 1px solid var(--m-linha-suave);
+    color: var(--m-texto-suave);
+    font-size: 16px;
+    font-style: normal;
+    line-height: 1.5;
+}
+ 
+main article address::before,
+main article > div > p:nth-of-type(2)::before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+}
+ 
+/* recursos de acessibilidade */
+main article ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+main article ul li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 14px;
+    border: 1px solid var(--m-chip);
+    border-radius: 10px;
+    background: var(--m-chip);
+    color: var(--cor-azul-marinho);
+    font-size: 14px;
+    font-weight: 600;
+}
+ 
+main article ul li::before {
+    content: "";
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cor-azul-petroleo);
+}
+ 
+/* botão de seta */
+main article > div > a {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border: 1px solid var(--m-linha);
+    border-radius: 50%;
+    background: var(--cor-fundo-cartao);
+    color: var(--cor-azul-marinho);
+    font-size: 22px;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+}
+ 
+main article > div > a:hover {
+    background: var(--cor-principal);
     color: var(--cor-creme);
 }
 
-tbody th {
-    font-weight: 600;
+main #beneficios {
+    padding: clamp(40px, 6vw, 72px) var(--m-gutter);
+    border-block: 1px solid var(--m-linha-suave);
+    background: var(--m-faixa);
 }
-
-tbody tr:nth-child(even) {
-    background: rgb(244 233 205 / 45%);
+ 
+main #beneficios ol {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 40px 56px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: beneficio;
 }
-
-tbody tr:hover {
-    background: rgb(119 172 164 / 20%);
+ 
+main #beneficios li {
+    display: grid;
+    grid-template-columns: clamp(48px, 6vw, 80px) 1fr;
+    counter-increment: beneficio;
 }
-
-tfoot th,
-tfoot td {
-    border-bottom: 0;
-    background: rgb(70 129 137 / 14%);
+ 
+/* numeração 01, 02, 03 */
+main #beneficios li::before {
+    content: counter(beneficio, decimal-leading-zero);
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    color: var(--m-acento-texto);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+ 
+main #beneficios h3 {
+    grid-column: 2;
+    margin: 0 0 10px;
+    font-size: 20px;
     font-weight: 700;
 }
+ 
+main #beneficios p {
+    grid-column: 2;
+    max-width: 34ch;
+    margin: 0;
+    color: var(--m-texto-suave);
+    line-height: 1.7;
+}
 
+/*rodapé*/
 footer {
     /* auto-fit adapta a quantidade à largura */
     display: grid;

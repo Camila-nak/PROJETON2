@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/impacto.css">
-    <title>Explore espaços que acolhem você - PCDireitos</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+    <script src="../js/mapa.js" defer></script>
+        <title>Explore espaços que acolhem você - PCDireitos</title>
 </head>
 <body>
 
-        <!--Cabeçalho-->
+    <!--Cabeçalho-->
     <header>
         <img src="../imgs/logo_PCDireitos.jpg" alt="Logo do PCDireitos">
         <h1>PCDireitos</h1>
@@ -41,62 +44,465 @@
     <!-- Conteúdo principal -->
     <main>
         <section>
-            <p>Dados e resultados</p>
-            <h1>Impacto</h1>
-            <p>Resultados dos nossos projetos em números. Os valores dos projetos são fictícios, para fins acadêmicos.</p>
+            <p>Um guia feito por todos</p>
+
+            <h1 id="titulo">Explore espaços que <em>acolhem você.</em></h1>
+
+            <p>Descubra lugares, experiências e eventos acessíveis perto de você —
+                com informações claras, verificadas e construídas pela comunidade. </p>
+
+            <ul>
+                <li>Informações verificadas</li>
+                <li>São Paulo e região</li>
+                <li>+120 locais mapeados</li>
+            </ul>
         </section>
 
-        <section>
-            <h2>Resultados por projeto</h2>
+        <!-- FILTROS DE CATEGORIA -->
+        <nav aria-label="Categorias">
+            <ul>
+                <li><button type="button" aria-pressed="true">Todos</button></li>
+                <li><button type="button" aria-pressed="false">Parques</button></li>
+                <li><button type="button" aria-pressed="false">Restaurantes</button></li>
+                <li><button type="button" aria-pressed="false">Teatros e Shows</button></li>
+                <li><button type="button" aria-pressed="false">Museus</button></li>
+                <li><button type="button" aria-pressed="false">Lazer</button></li>
+            </ul>
+        </nav>
 
-            <div>
+        <!-- LOCAIS EM DESTAQUE -->
+        <section id="locais" aria-labelledby="titulo-locais">
+            <header>
+                <p>Descubra por perto</p>
+                <h2 id="titulo-locais">Locais acessíveis em destaque</h2>
+                <p><strong>16</strong> locais encontrados</p>
+            </header>
 
-                <!--Tabela de resultados-->
-                <table>
-                    <!--caption é o título da tabela, thead é o cabeçalho, tbody é o corpo da tabela e tfoot é o rodapé da tabela-->
-                    <caption>Pessoas atendidas e resultados por projeto (2023–2025)</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Projeto</th>
-                            <th scope="col">Pessoas atendidas</th>
-                            <th scope="col">Oficinas / ações</th>
-                            <th scope="col">Resíduos reaproveitados (kg)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><th scope="row">Horta Acessível</th><td>320</td><td>24</td><td>1.200</td></tr>
-                        <tr><th scope="row">Oficinas de Reciclagem Inclusiva</th><td>540</td><td>58</td><td>4.800</td></tr>
-                        <tr><th scope="row">Escola Sem Barreiras</th><td>1.150</td><td>36</td><td>0</td></tr>
-                    </tbody>
-                    <tfoot>
-                        <tr><th scope="row">Total</th><td>2.010</td><td>118</td><td>6.000</td></tr>
-                    </tfoot>
-                </table>
-            </div>
+            <!-- MAPA -->
+            <aside aria-label="Mapa dos locais">
+                <header>
+                    <p>São Paulo, SP</p>
+                    <button type="button">Redefinir mapa</button>
+                </header>
+
+                <div id="mapa" aria-label="Mapa de São Paulo com os locais em destaque"></div>
+                    <ul>
+                        <li>Parque Ibirapuera</li>
+                        <li>Parque Villa-Lobos</li>
+                        <li>Museu Catavento</li>
+                        <li>Pinacoteca de São Paulo</li>
+                        <li>Itaú Cultural</li>
+                        <li>Centro de Tradições Nordestinas (CTN)</li>
+                        <li>Parque da Mônica</li>
+                        <li>Aquário de São Paulo</li>
+                        <li>Restaurante Capim Santo</li>
+                        <li>MOMA Itaim – Modern Mamma Osteria</li>
+                        <li>Basilicata – Pão, Empório e Restaurante</li>
+                        <li>Bar Original</li>
+                        <li>Teatro Santander</li>
+                        <li>Teatro Sesi São Paulo</li>
+                        <li>Cine Joia</li>
+                        <li>Theatro Municipal de São Paulo</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- LISTA DE CARDS -->
+            <ul>
+
+                <li data-categoria="Parques">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/ibira.jpg" alt="Passarela e lago do Parque Ibirapuera">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Parques</p>
+                            <h3>Parque Ibirapuera</h3>
+                            <address>Vila Mariana</address>
+
+                            <ul>
+                            <li>Rampas de acesso</li>
+                            <li>Banheiros adaptados</li>
+                            <li>Vagas preferenciais</li>
+                            </ul>
+
+                            <a href="https://www.parquedoibirapuera.org" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Parque Ibirapuera">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Parques">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/villalobos.jpg" alt="Parque Villa-Lobos">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Parques</p>
+                            <h3>Parque Villa-Lobos</h3>
+                            <address>Alto de Pinheiros</address>
+
+                            <ul>
+                            <li>Rotas acessíveis</li>
+                            <li>Biblioteca com acervo em braille</li>
+                            <li>Audiolivros</li>
+                            </ul>
+
+                            <a href="https://parquevillalobos.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Parque Villa-Lobos">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Museus">
+                    <article>
+                        <figure>
+                            <img src="../imgs//museu/catavento.jpg" alt="Fachada do Museu Catavento">
+                            <figcaption>Acesso completo</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Museus</p>
+                            <h3>Museu Catavento</h3>
+                            <address>São Paulo - SP</address>
+
+                            <ul>
+                            <li>Percursos adaptados</li>
+                            <li>Cadeirantes</li>
+                            <li>Conteúdo inclusivo</li>
+                            </ul>
+
+                            <a href="https://www.museucatavento.org.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Museu Catavento">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Museus">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/pina.jpg" alt="Pátio interno da Pinacoteca de São Paulo">
+                            <figcaption>Acesso completo</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Museus</p>
+                            <h3>Pinacoteca de São Paulo</h3>
+                            <address>Bom Retiro</address>
+
+                            <ul>
+                            <li>Rampas</li>
+                            <li>Elevadores</li>
+                            <li>Experiências táteis</li>
+                            </ul>
+
+                            <a href="https://pinacoteca.org.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Pinacoteca de São Paulo">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Museus">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/itau.jpeg" alt="Fachada do Itaú Cultural">
+                            <figcaption>Programação acessível</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Museus</p>
+                            <h3>Itaú Cultural</h3>
+                            <address>São Paulo - SP</address>
+
+                            <ul>
+                            <li>Entrada acessível</li>
+                            <li>Piso tátil</li>
+                            <li>Elevadores</li>
+                            <li>Banheiros adaptados</li>
+                            </ul>
+
+                            <a href="https://www.itaucultural.org.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Itaú Cultural">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Museus">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/nord.jpg" alt="Entrada do Centro de Tradições Nordestinas">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Museus</p>
+                            <h3>Centro de Tradições Nordestinas (CTN)</h3>
+                            <address>São Paulo - SP</address>
+
+                            <ul>
+                            <li>Ampla área plana</li>
+                            <li>Infraestrutura acessível</li>
+                            </ul>
+
+                            <a href="https://www.ctn.org.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Centro de Tradições Nordestinas (CTN)">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Lazer">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/monica.jpg" alt="Personagens da Turma da Mônica no parque">
+                            <figcaption>Inclusão em destaque</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Lazer</p>
+                            <h3>Parque da Mônica</h3>
+                            <address>Shopping SP Market</address>
+
+                            <ul>
+                            <li>Intérpretes de Libras</li>
+                            <li>Sala do Silêncio (TEA)</li>
+                            <li>Fones abafadores</li>
+                            <li>Cordão de girassol</li>
+                            </ul>
+
+                            <a href="https://ingressos.parquedamonica.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Parque da Mônica">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Lazer">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/aquario.jpg" alt="Aquário de São Paulo">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Lazer</p>
+                            <h3>Aquário de São Paulo</h3>
+                            <address>Ipiranga</address>
+
+                            <ul>
+                            <li>Percurso plano</li>
+                            <li>Cadeiras de rodas e carrinhos</li>
+                            <li>Entrada gratuita para PcD</li>
+                            </ul>
+
+                            <a href="https://aquariodesp.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Aquário de São Paulo">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Restaurantes">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/capim.jpg" alt="Ambiente arborizado do Capim Santo">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Restaurantes</p>
+                            <h3>Restaurante Capim Santo</h3>
+                            <address>Jardim Europa</address>
+
+                            <ul>
+                            <li>Entrada acessível</li>
+                            <li>Assentos acessíveis</li>
+                            <li>Banheiro acessível</li>
+                            <li>Estacionamento acessível</li>
+                            </ul>
+
+                            <a href="https://www.restaurantecapimsanto.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Restaurante Capim Santo">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Restaurantes">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/moma.jpg" alt="Massa artesanal do MOMA Itaim">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Restaurantes</p>
+                            <h3>MOMA Itaim – Modern Mamma Osteria</h3>
+                            <address>Itaim Bibi</address>
+
+                            <ul>
+                            <li>Vaga preferencial</li>
+                            <li>Entrada acessível</li>
+                            <li>Assentos acessíveis</li>
+                            <li>Banheiro acessível</li>
+                            </ul>
+
+                            <a href="https://www.bymomagroup.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de MOMA Itaim – Modern Mamma Osteria">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Restaurantes">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/basilicata.jpg" alt="Pães artesanais da Basilicata">
+                            <figcaption>Acolhimento inclusivo</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Restaurantes</p>
+                            <h3>Basilicata – Pão, Empório e Restaurante</h3>
+                            <address>Bela Vista</address>
+
+                            <ul>
+                            <li>Entrada acessível</li>
+                            <li>Banheiro acessível</li>
+                            <li>Acolhe pessoas autistas</li>
+                            </ul>
+
+                            <a href="https://www.basilicata.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Basilicata – Pão, Empório e Restaurante">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Restaurantes">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/barmoema.jpg" alt="Chope do Bar Original">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Restaurantes</p>
+                            <h3>Bar Original</h3>
+                            <address>Moema</address>
+
+                            <ul>
+                            <li>Entrada acessível</li>
+                            <li>Mesas</li>
+                            <li>Banheiro adaptado</li>
+                            <li>Estacionamento acessível</li>
+                            </ul>
+
+                            <a href="https://baroriginal.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Bar Original">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Teatros e Shows">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/TEATRO-SANTANDER.jpg" alt="Plateia do Teatro Santander">
+                            <figcaption>Acesso completo</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Teatros e Shows</p>
+                            <h3>Teatro Santander</h3>
+                            <address>Complexo JK Iguatemi</address>
+
+                            <ul>
+                            <li>Rampas</li>
+                            <li>3 elevadores</li>
+                            <li>Espaços para cadeirantes</li>
+                            <li>Assentos para pessoas obesas</li>
+                            <li>Banheiros adaptados</li>
+                            </ul>
+
+                            <a href="https://www.teatrosantander.com.br/?utm_source=gbp&utm_medium=perfil" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Teatro Santander">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Teatros e Shows">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/SESI-SP.jpg" alt="Palco do Teatro Sesi São Paulo">
+                            <figcaption>Programação acessível</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Teatros e Shows</p>
+                            <h3>Teatro Sesi São Paulo</h3>
+                            <address>Avenida Paulista</address>
+
+                            <ul>
+                            <li>Acessibilidade física completa</li>
+                            <li>Libras</li>
+                            <li>Audiodescrição</li>
+                            </ul>
+
+                            <a href="https://www.sesisp.org.br/cultura" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Teatro Sesi São Paulo">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Teatros e Shows">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/cinejoia.jpg" alt="Casa de shows Cine Joia">
+                            <figcaption>Acesso verificado</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Teatros e Shows</p>
+                            <h3>Cine Joia</h3>
+                            <address>Liberdade</address>
+
+                            <ul>
+                            <li>Entrada preferencial</li>
+                            <li>Rampa de acesso</li>
+                            <li>Banheiro adaptado</li>
+                            <li>Área reservada para o palco</li>
+                            </ul>
+
+                            <a href="https://www.cinejoia.com.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Cine Joia">→</a>
+                        </div>
+                    </article>
+                </li>
+
+                <li data-categoria="Teatros e Shows">
+                    <article>
+                        <figure>
+                            <img src="../imgs/museu/municipalsp.jpg" alt="Fachada do Theatro Municipal de São Paulo">
+                            <figcaption>Selo de Acessibilidade</figcaption>
+                        </figure>
+
+                        <div>
+                            <p>Teatros e Shows</p>
+                            <h3>Teatro Municipal de São Paulo</h3>
+                            <address>República</address>
+
+                            <ul>
+                            <li>Selo de Acessibilidade Arquitetônica</li>
+                            <li>Circulação segura</li>
+                            <li>Mobilidade reduzida</li>
+                            </ul>
+
+                            <a href="https://theatromunicipal.org.br" target="_blank" rel="noopener noreferrer" aria-label="Ver detalhes de Theatro Municipal de São Paulo">→</a>
+                        </div>
+                    </article>
+                </li>
+            </ul>
         </section>
 
-        <section>
-            <h2>Dados nacionais de referência</h2>
-            <div >
-                <table>
-                    <caption>Pessoas com deficiência no Brasil</caption>
-
-                    <thead>
-                        <tr>
-                            <th scope="col">Indicador</th>
-                            <th scope="col">Valor</th>
-                            <th scope="col">Fonte</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr><td>Brasileiros com alguma deficiência</td><td>14,4 milhões</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Percentual da população com 2 anos ou mais</td><td>7,3%</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Mulheres</td><td>8,3 Milhões</td><td>Censo 2022 do IBGE</td></tr>
-                        <tr><td>Homens</td><td>6,1 Milhões</td><td>Censo 2022 do IBGE</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <!-- BENEFÍCIOS -->
+        <section id="beneficios" aria-label="Por que usar o guia">
+            <ol>
+                <li>
+                    <h3>Informação detalhada</h3>
+                    <p>Saiba quais recursos estão disponíveis antes de sair de casa.</p>
+                </li>
+                <li>
+                    <h3>Comunidade ativa</h3>
+                    <p>Locais avaliados e atualizados por quem vive a cidade.</p>
+                </li>
+                <li>
+                    <h3>Experiências melhores</h3>
+                    <p>Planeje seus passeios com mais autonomia e tranquilidade.</p>
+                </li>
+            </ol>
         </section>
     </main>
 
