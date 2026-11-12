@@ -14,37 +14,36 @@
     --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
     --cor-fundo-cartao: #fffdf7; /* artões e painel */
     --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+    --cor-azul-marinho: var(--cor-principal);
+    --cor-azul-petroleo: var(--cor-destaque);
+    --cor-branco-quente: var(--cor-fundo-cartao);
 }
 
-/* bordas e preenchimentos no cálculo da largura */
 * {
     box-sizing: border-box;
 }
 
 body {
-    min-width: 320px; /* Evita que a tela fique estreita demais */
+    min-width: 320px; 
     margin: 0;
 }
 
 a {
     color: var(--cor-principal);
-    text-underline-offset: 3.2px; /* separa o sublinhado das letras */
+    text-underline-offset: 3.2px; 
 }
 
-/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
 a:hover {
     color: var(--cor-destaque);
 }
 
-/*  destaca o elemento que recebeu foco, como na navegação pelo tab */
 :focus-visible {
     outline: 3px solid var(--cor-verde-agua);
     outline-offset: 4px;
 }
 
 header {
-    /* max ele escolhe o maior valor: mantém espaço nas laterais e centraliza
-       o conteúdo em telas mais largas */
+
     display: grid;
     align-items: center;
     grid-template-columns: auto 1fr;
@@ -64,12 +63,11 @@ header > img[src="../imgs/logo_PCDireitos.jpg"] {
 header h1 {
     flex-basis: 100%;
     margin: 0;
-    font-size: clamp(28px, 4vw, 36px); /* Tamanho que se adapta a tela */
+    font-size: clamp(28px, 4vw, 36px); 
     line-height: 1.2;
 }
 
 .marca-descricao {
-    /* O ponto '.' seleciona uma classe do html onde identifica a frase */
     flex-basis: 100%;
     margin: 0;
     color: var(--cor-verde-claro);
@@ -424,11 +422,9 @@ footer ul {
 
 /*Parte da logo no rodapé*/
 footer img {
-    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
-    width: 140px;       /* ajusta o tamanho aqui */
-    height: auto;
+    display: block;    
     margin-bottom: 12px;
-    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    margin-left: -12px;   
     border-radius: 12px;
 }
 
