@@ -120,10 +120,6 @@ header h1 {
     box-shadow: 0 8px 24px rgb(3 25 38 / 8%);
 }
 
-/* Main */
-
-/*Quando o usuário seleciona a resposta correta e errada, ai distingue por essas cores através do js*/
-/*Pode deixar mais para o final essa parte*/
 button.correct {
     background-color: #2e7d32;
     color: #fff;
@@ -132,6 +128,129 @@ button.correct {
 button.wrong {
     background-color: #c62828;
     color: #fff;
+}
+
+main {
+    width: min(100% - 32px, 760px);
+    margin: clamp(32px, 6vw, 72px) auto 64px;
+}
+
+#quiz,
+#result {
+    padding: clamp(24px, 5vw, 48px);
+    border: 1px solid rgb(3 25 38 / 10%);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 100% 0, rgb(119 172 164 / 20%), transparent 34%),
+        var(--cor-branco-quente);
+    box-shadow: 0 16px 40px rgb(3 25 38 / 12%);
+}
+
+#count {
+    display: inline-flex;
+    margin: 0 0 18px;
+    padding: 6px 14px;
+    border: 1px solid rgb(46 125 50 / 20%);
+    border-radius: 999px;
+    background: rgb(46 125 50 / 10%);
+    color: #256b2a;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#question {
+    margin: 0 0 24px;
+    font-size: clamp(24px, 4vw, 34px);
+    line-height: 1.25;
+}
+
+#options {
+    display: grid;
+    gap: 12px;
+}
+
+#options br {
+    display: none;
+}
+
+#options button {
+    width: 100%;
+    padding: 15px 18px;
+    border: 1px solid rgb(3 25 38 / 16%);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--cor-azul-marinho);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    text-align: left;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+#options button:hover:not(.correct, .wrong) {
+    transform: translateY(-2px);
+    border-color: var(--cor-azul-petroleo);
+    background: rgb(158 190 189 / 20%);
+}
+
+#options button.correct {
+    border: 2px solid #2e7d32;
+    background: #e7f4e8;
+    color: #1b5e20;
+}
+
+#options button.wrong {
+    border: 2px solid #c62828;
+    background: #fdebea;
+    color: #8e1b1b;
+}
+
+#feedback:not(:empty) {
+    margin: 22px 0 0;
+    padding: 14px 16px;
+    border-left: 4px solid var(--cor-azul-petroleo);
+    border-radius: 8px;
+    background: rgb(158 190 189 / 20%);
+}
+
+#next,
+#restart {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--cor-azul-petroleo);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+#next:hover,
+#restart:hover {
+    background: #356b72;
+}
+
+#next[hidden],
+#result[hidden],
+#quiz[hidden] {
+    display: none;
+}
+
+#result {
+    text-align: center;
+}
+
+#score {
+    margin: 0;
+    color: #256b2a;
+    font-size: clamp(40px, 8vw, 64px);
+    line-height: 1.1;
+}
+
+#message {
+    margin: 14px 0 0;
+    font-size: 18px;
 }
 
 /* parte de baixo (rodapé) */
@@ -166,11 +285,10 @@ footer ul {
 
 /*Parte da logo no rodapé*/
 footer img {
-    display: block;     /* a imagem ocupa a própria linha, ficando acima da frase */
-    width: 140px;       /* ajusta o tamanho aqui */
+    display: block;    
     height: auto;
     margin-bottom: 12px;
-    margin-left: -12px;   /* alinha o desenho da logo com a borda do texto */
+    margin-left: -12px;  
     border-radius: 12px;
 }
 
@@ -253,7 +371,7 @@ footer p {
     color: var(--cor-creme);
 }
 
-/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
+
 #acesso svg {
     position: absolute;
     width: 0;
@@ -364,5 +482,24 @@ html.dalt-tritanopia   {
     .navegacao-principal a {
         padding: 8px 8.8px;
         font-size: 13.6px;
+    }
+
+    #quiz,
+    #result {
+        padding: 22px 18px;
+        border-radius: 18px;
+    }
+
+    #next,
+    #restart {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
     }
 }
