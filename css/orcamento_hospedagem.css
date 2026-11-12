@@ -14,9 +14,12 @@
     --cor-creme: #f4e9cd; /*  fundo geral e texto sobre azul escuro */
     --cor-fundo-cartao: #fffdf7; /* artões e painel */
     --sombra-cartao: 0 8px 24px rgb(3 25 38 / 8%); /* Sombra */
+    --cor-azul-marinho: var(--cor-principal);
+    --cor-azul-petroleo: var(--cor-destaque);
+    --cor-branco-quente: var(--cor-fundo-cartao);
 }
 
-/* bordas e preenchimentos no cálculo da largura */
+/* bordas e preenchimento */
 * {
     box-sizing: border-box;
 }
@@ -28,23 +31,21 @@ body {
 
 a {
     color: var(--cor-principal);
-    text-underline-offset: 3.2px; /* separa o sublinhado das letras */
+    text-underline-offset: 3.2px; 
 }
 
-/*  aplica o estilo quando o ponteiro do mouse está sobre o link */
+
 a:hover {
     color: var(--cor-destaque);
 }
 
-/*  destaca o elemento que recebeu foco, como na navegação pelo tab */
 :focus-visible {
     outline: 3px solid var(--cor-verde-agua);
     outline-offset: 4px;
 }
 
 header {
-    /*Espaço interno do cabeçalho: 20px em cima e embaixo, e nas laterais um valor que 
-    acompanha a tela (3% da largura), nunca menor que 20px nem maior que 48px.*/
+
     padding: 20px clamp(20px, 3vw, 48px); 
     color: var(--cor-creme);
     background: var(--cor-principal);
@@ -438,7 +439,6 @@ body > footer p {
     color: var(--cor-creme);
 }
 
-/* A partir daqui é  modo de como funciona dentro do painel, deixando ele na lateral e permitindo que tudo funcione */
 #acesso svg {
     position: absolute;
     width: 0;
